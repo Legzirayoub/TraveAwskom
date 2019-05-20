@@ -1,6 +1,6 @@
 <?php session_start(); ?>
 <?php 
-include( "Aw-func/connection.php" );
+include( "Awskomfunction/connection.php" );
 	if ( isset( $_SESSION['user_email'] ) ) {
 	header( "location: home.php" );
 	}else {
