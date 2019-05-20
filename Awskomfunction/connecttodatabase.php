@@ -1,8 +1,8 @@
 <?php
-$db['db_host'] = "pdb30.freehostingeu.com";
-$db['db_user'] = "2820006_loginsystem";
-$db['db_pass'] = "0-DH!!Go...OoTan";
-$db['db_name'] = "2820006_loginsystem";
+$db['db_host'] = "";
+$db['db_user'] = "";
+$db['db_pass'] = "";
+$db['db_name'] = "";
 foreach ($db as $key => $value) {
 	define ( strtoupper( $key ), $value );
 }
