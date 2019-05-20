@@ -8,8 +8,8 @@
 		$Data = mysqli_fetch_array( $ferteh_user );
 		$status = $Data['status'];
 	if ( $security == 1 ) {
-	if ( $status == 'unverified') {
-				echo "<script>alert('Your email is not verified. Please check your email to verify.')</script>";
+	if ( $status == '1') {
+				echo "<script>alert('Your email is not verified. Please check your email Inbox.')</script>";
 	}else{	
 				$_SESSION['user_email'] = $email;
 				echo "<script>window.open('home.php','_self')</script>";}
