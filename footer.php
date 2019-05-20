@@ -15,6 +15,7 @@ font-family: 'Open Sans', sans-serif;}
  <div class="TPWL-footer-content__descrition">
     <a href="Rules/TermsofService.php" target=_blank>Terms of Service</a>&nbsp;<a href="Rules/policy.php" target=_blank>Privacy Policy</a>&nbsp;<a href="Rules/cookie.php" target=_blank>Cookie Policy</a>
   </div>. AWSKOM © 2017−<script type="text/javascript"> document.write((new Date()).getFullYear())</script>
+  <a href="?lang=english">English</a> &bull; <a href="?lang=العربية">العربية</a>
 </p>
 </div>
 </div>
