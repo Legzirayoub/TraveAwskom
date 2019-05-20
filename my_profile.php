@@ -12,7 +12,7 @@ include ( "Awskomfunction/Awskom.php" );
 		<?php my_profile(); ?>
 			<div id="posts">
 				<br>
-				<?php your_posts(); ?>
+				<?php yourposts(); ?>
 			</div>
 		</div>
 <?php include( "footer.php" );} ?>
