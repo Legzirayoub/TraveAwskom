@@ -9,7 +9,7 @@ include ( "Aw-func/Aw.php" );
 		$row_user = mysqli_fetch_array( $run_user );
 		$user_id = $row_user['user_id'];
 		if ( $check_user == 1 ) {
-			$update_status = "UPDATE users set status='verified' where user_id='$user_id'";
+			$update_status = "UPDATE users set status='1' where user_id='$user_id'";
 			$run_update = mysqli_query( $connection, $update_status );?> 		
 			<h2>Your account has been successfully activated.</h2>Please 
                         <a href='index.php'>Login , Share your Story , Enjoy the discussion .</a>
