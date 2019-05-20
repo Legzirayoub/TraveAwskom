@@ -5,8 +5,8 @@ include( "Aw-func/connection.php" );
 	header( "location: home.php" );
 	}else {
                 include ('forum/header.php');  
-		include( "header/header_login.php" );
-		include( "home.php" );
+		include( "head/header/header_login.php" );
+		include( "home-html.php/home.php" );
 		include( "login.php" );
 		}?>
                 <?php include ("footer.php"); ?>
