@@ -4,7 +4,7 @@
 <div class="col-sm-3">
 	<?php 
         session_start(); 
-        include __DIR__ . "/../Aw-func/connection.php";
+        include __DIR__ . "/../../Aw-func/connection.php";
 		$user 		= $_SESSION['user_email'];
 		$ara_user   = "SELECT * from users where user_email='$user'";
 		$ferteh_user   = mysqli_query( $connection, $ara_user );
