@@ -1,0 +1,35 @@
+
+User-agent: *
+Disallow: /
+
+Disallow: /welcome.php/
+Disallow: /home.php/
+Disallow: /accountreset/forgotPassword.php/
+Disallow: /accountreset/resetPassword.php/
+Disallow: /my_profile_like_user01.php/
+Disallow: /user_profile.php/
+Disallow: /index.php/
+Disallow: /my_profile_like_user01.php/
+Disallow: /footer.php/
+
+Disallow: /comments.php/
+Disallow: /changepost.php/
+Disallow: /M-posts.php/
+Disallow: /user/my_profile_like_user02.php/
+Disallow: /user/my_profile_like_user03.php/
+Disallow: /user/my_profile_like_user04.php/
+Disallow: /user/my_profile_like_user05.php/
+Disallow: /user_profile.php/
+Disallow: /user_profile1.php/
+Disallow: /user_profile2.php/
+Disallow: /user_profile3.php/
+
+Disallow: /One.php/
+Disallow: /activate.php/
+Disallow: /activateaccount.php/
+Disallow: /two.php/
+Disallow: /three.php/
+Disallow: /edit-profile.php/
+Disallow: /edit-profile2.php/
+Disallow: /edit-profile3.php/
+Disallow: /edit-profile4.php/
