@@ -7,18 +7,11 @@ background-color: #D3D3D3;
 border-radius: 10px;
 }
 </style>
-  <meta name="google-site-verification" content="5pLi041onTkwAX7e1Yy73SMAEKOSWVqzgLgaycwhYwQ" />
-<script async src="https://www.googletagmanager.com/gtag/js?id=UA-131233400-1"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-  gtag('config', 'UA-131233400-1');
-</script>
+
   <meta charset="utf-8">
   <meta name="viewport" content="width=500, initial-scale=1">
   <title>AWSKOM FLIGHT | HOTEL SEARCH AND TRAVEL FORUM</title>
-  <meta name="keywords" content="Flight search, hotel search, best flight and hotel, cheap air tickets, travel, travel forum">
+  <meta name="keywords" content="Flight search, hotel search, best flight and hotel, cheap air tickets, travel, travel social network">
   <meta name="description" content="Want to Compare Flight and Hotel deals or Looking for someone to travel with ? We really appreciate all of you taking time to get in touch in our travel forum">
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black">
@@ -70,11 +63,11 @@ if just a comment write it normal without tags . " required></textarea>
                                 <input type="submit" name="sub" class="btn btn-info pull-right" value="Post">
                                 <select name="topic" class="custom-select">
 				<option value="">Categorie</option>
-				<?php getTopics(); ?>
+				<?php Gettopics(); ?>
 				</select>
                                 <select name="Visibility" class="custom-select" required>
 				<option value="">Visibility</option>
-				<?php getVisibility(); ?> 
+				<?php GetVisibility(); ?> 
 				</select>
                                 </div>
 				</div>                                                                
@@ -82,17 +75,12 @@ if just a comment write it normal without tags . " required></textarea>
 				<div class="col-sm-12">
 				</div>
 				</div>
-			        <?php insertPost(); ?>
+			        <?php Insertpost(); ?>
 			        <div id="posts">
 				<?php if ( isset( $_GET['user_id'] ) ) {
 	$user_id = $_GET['user_id'];}
-        $pagenumber = 5;
-	if ( isset( $_GET['page'] ) ) {
-	$page = $_GET['page'];
-	}else {
-	$page = 1;}
-	$start_from = ( $page - 1 ) * $pagenumber;
-	$get_posts  = "SELECT * from posts where Visibility_id='1' order by post_date desc LIMIT $start_from,$pagenumber  ";
+        
+	$get_posts  = "SELECT * from posts where Visibility_id='1' order by post_date desc  ";
 	$ferteh_posts  = mysqli_query( $connection, $get_posts );
 	while ( $row_posts = mysqli_fetch_array( $ferteh_posts ) ) {
 		$post_id = $row_posts['post_id'];
@@ -146,73 +134,7 @@ if just a comment write it normal without tags . " required></textarea>
                 </div>
                 </div>  
                 <div class="col-xs-6 col-sm-5 col-lg-5">
-               <script charset="utf-8" type="text/javascript">
-        window.TP_FORM_SETTINGS = window.TP_FORM_SETTINGS || {};
-        window.TP_FORM_SETTINGS["f0e7477bc63906acb438d59c33077241"] = {
-	"handle": "f0e7477bc63906acb438d59c33077241",
-	"widget_name": "En",
-	"border_radius": "4",
-	"additional_marker": null,
-	"width": 940,
-	"show_logo": false,
-	"show_hotels": true,
-	"form_type": "avia_hotel",
-	"locale": "en",
-	"currency": "usd",
-	"sizes": "default",
-	"search_target": "_blank",
-	"active_tab": "avia",
-	"search_host": "flightsearch.awskom.com/flights",
-	"hotels_host": "hotelsearch.awskom.com/hotels",
-	"hotel": "",
-	"hotel_alt": "Awskom offers great deals and discounts on hotels worldwide",
-	"avia_alt": "",
-	"retargeting": true,
-	"trip_class": "economy",
-	"depart_date": null,
-	"return_date": null,
-	"check_in_date": null,
-	"check_out_date": null,
-	"no_track": false,
-	"powered_by": false,
-	"id": 162109,
-	"marker": 172897,
-	"origin": {
-		"name": ""
-	},
-	"destination": {
-		"name": ""
-	},
-	"color_scheme": {
-		"name": "custom",
-		"icons": "icons_black",
-		"background": "#c3c4c5",
-		"color": "#000000",
-		"border_color": "transparent",
-		"button": "#000000",
-		"button_text_color": "#ffffff",
-		"input_border": "#ffffff"
-	},
-	"hotels_type": "hotellook_host",
-	"best_offer": {
-		"locale": "en",
-		"currency": "usd",
-		"marker": 172897,
-		"search_host": "flightsearch.awskom.com/flights",
-		"offers_switch": false,
-		"api_url": "//minprices-jetradar.aviasales.ru/minimal_prices/offers.json",
-		"routes": []
-	},
-	"hotel_logo_host": null,
-	"search_logo_host": "jetradar.com",
-	"hotel_marker_format": null,
-	"hotelscombined_marker": null,
-	"responsive": false,
-	"height": 215
-};
-</script>
-<script charset="utf-8" src="//www.travelpayouts.com/widgets/f0e7477bc63906acb438d59c33077241.js?v=1739" async></script>
-<h6> <a href ="https://www.travelpayouts.com/?marker=172897.poweredby&utm_source=powered_by&utm_medium=widget&utm_campaign=mewtwo" target="_blank">Travel affiliate programs | cashback</a></h6>
+           
 <?php travel_with();?>
 <div class='thumbnail'>
 <a href='home2.php'>Display all interested traveller</a>
