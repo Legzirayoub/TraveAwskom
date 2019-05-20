@@ -1,11 +1,11 @@
 <?php 
 	session_start(); 
-	include ( "Aw-func/connection.php" );
+	include ( "Awskomfunction/connection.php" );
 include ( "Aw-func/Aw.php" );
 	if ( !isset( $_SESSION['user_email'] ) ) {
 		header( "location: index.php" );
 	}else {
         include( "forum/header.php" );
-		include ( "header/header.php" );?>
+		include ( "head/header/header.php" );?>
 	<?php 
-	 include ("Aw-func/edit-pro.php"); }?>
+	 include ("Awskomfunction/edit-pro.php"); }?>
