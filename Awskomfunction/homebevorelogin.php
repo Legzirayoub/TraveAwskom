@@ -16,7 +16,7 @@ border-radius: 10px;
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black">
   <meta name="format-detection" content="telephone=yes">
-  <link href="user/user_images/awskom.png" rel="shortcut icon">
+  <link href="userimage/awskom.png" rel="shortcut icon">
   </head>
   <body>
     <div class="container-fluid">
@@ -75,7 +75,7 @@ border-radius: 10px;
 		<div class='panel-body'>
 		<div class='col-sm-13'>
 		<ol class='breadcrumb'>
-        <img src='user/user_images/<?php echo $user_image  ;?>' class='img-circle' alt="userimage" width='50' height='50'>
+        <img src='userimage/<?php echo $user_image  ;?>' class='img-circle' alt="userimage" width='50' height='50'>
 		<li><a href='/'><?php echo $user_name ?></a></li>
 		<li><?php echo $postdate ?></li>
 		</ol>
