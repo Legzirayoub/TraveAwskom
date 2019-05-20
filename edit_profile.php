@@ -1,6 +1,6 @@
 <?php 
 	session_start(); 
-	include ( "Awskomfunction/connection.php" );
+	include ( "Awskomfunction/connecttodatabase.php" );
 include ( "Aw-func/Aw.php" );
 	if ( !isset( $_SESSION['user_email'] ) ) {
 		header( "location: index.php" );
@@ -8,4 +8,4 @@ include ( "Aw-func/Aw.php" );
         include( "forum/header.php" );
 		include ( "head/header/header.php" );?>
 	<?php 
-	 include ("Awskomfunction/edit-pro.php"); }?>
+	 include ("Awskomfunction/editpro.php"); }?>
