@@ -12,7 +12,7 @@
 				echo "<script>alert('Your email is not verified. Please check your email Inbox.')</script>";
 	}else{	
 				$_SESSION['user_email'] = $email;
-				echo "<script>window.open('home.php','_self')</script>";}
+				echo "<script>window.open('home.php')</script>";}
 	}else {
-			echo "<script>alert('Password or email is not correct!')</script>";
+			echo "<script>alert('Wrong Email or password')</script>";
 		}}?>
