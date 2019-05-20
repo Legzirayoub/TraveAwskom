@@ -1,2 +1,0 @@
-# TraveAwskom
-Travel Social Network
