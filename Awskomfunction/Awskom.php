@@ -1,5 +1,5 @@
 <?php
-function getTopics() {
+function Gettopics() {
 	global $connection;
 	$get_topics = "SELECT * from topics";
 	$run_topics = mysqli_query( $connection, $get_topics );
@@ -7,7 +7,7 @@ function getTopics() {
 		$topic_id = $row['topic_id'];
 		$topic_title = $row['topic_title'];
 		echo "<option value='$topic_id'>$topic_title</option>";}}
-function getVisibility() {
+function GetVisibility() {
 	global $connection;
 	$get_Visibility = "SELECT * from Visibility";
 	$run_Visibility = mysqli_query( $connection, $get_Visibility );
@@ -15,7 +15,7 @@ function getVisibility() {
 		$Visibility_id = $row['Visibility_id'];
 		$Visibility_title = $row['Visibility_title'];
 		echo "<option value='$Visibility_id'>$Visibility_title</option>";}}
-function insertPost() {
+function Insertpost() {
 	global $connection;
 	global $user_id;
 	if ( isset( $_POST['sub'] ) ) {
@@ -33,7 +33,7 @@ function insertPost() {
 			if ( $ferteh ) {
 			$update = "UPDATE users set posts='Yes' where user_id='$user_id'";
 			$ferteh_update = mysqli_query( $connection, $update );}}}}	                                          
-function travel_with() {
+function travelwith() {
 	global $connection;
         $user = "SELECT * from users where interested='yes' LIMIT 0,9";
 	$ferteh_user = mysqli_query( $connection, $user );
@@ -56,7 +56,7 @@ function travel_with() {
                 }
 echo $awskom;}
 
-function travel_with_all() {
+function travelwithall() {
 	global $connection;
         $user = "SELECT * from users where interested='yes' LIMIT 0,99999";
 	$ferteh_user = mysqli_query( $connection, $user );
