@@ -2,11 +2,10 @@
 if(count($_POST)>0) {
 	foreach($_POST as $key=>$value) {
 	if(empty($_POST[$key])) {
-	$message = ucwords($key) . " field is required";
+	$message = ucwords($key) . " field is required ";
 	$type = "error";
 	break;
-	}
-	}
+	}}
         if(strlen(trim($_POST["user_pass"])) < 8){
         $message = "Password must have atleast 8 characters.";
         $type = "error";
@@ -21,7 +20,7 @@ if(count($_POST)>0) {
 		$query = "SELECT * FROM users where user_email = '" . $_POST["user_email"] . "' OR user_name= '" . $_POST["user_name"] . "' ";                		
 		$count = $db_handle->numRows($query);
 		if($count==0) {
-                $status  = "unverified";
+                $status  = "0";
 	        $verification_code = mt_rand();
                 $IP = $_SERVER['REMOTE_ADDR'];
                 $query = "INSERT INTO users (user_name, user_pass, user_email, user_gender , verification_code , status ,register_date, last_login, user_image , IP ) VALUES
@@ -96,7 +95,7 @@ input.rounded:focus {
 </div> 
 <div class="col">
 <h3><font color="black">Be part of the discussion!</h3>
-<form name="frmRegistration" method="post" action="">
+<form name="Registration" method="post" action="">
 <table border="0" width="350" >
 <?php if(isset($message)) { ?>
 <div class='panel-heading'><strong><?php echo $message; ?></strong></div>
