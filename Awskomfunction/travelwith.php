@@ -59,7 +59,7 @@
                                         where user_id='$user_id'";
 					$ferteh = mysqli_query( $connection, $update );
 					if ( $ferteh ) {
-					echo "<script>alert('Profile Updat succesful !')</script>";
+					echo "<script>alert('Profile Updated succesfully ')</script>";
 					echo "<script>window.open( 'home.php', '_self' )</script>";
 					}else { echo 'File is not valid. Please try again'; }}?>
 		        </div>
