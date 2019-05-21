@@ -14,9 +14,7 @@
                 $user_posts = "SELECT  * from posts where user_id='$user_id'";
 		$ferteh_posts = mysqli_query( $connection, $user_posts );
 		$posts = mysqli_num_rows( $ferteh_posts );
-		$sel_msg = "SELECT * from messages where receiver='$user_id' AND status='Unseen' order by 1 DESC";
-		$ferteh_msg = mysqli_query( $connection, $sel_msg );
-		$count_msg = mysqli_num_rows( $ferteh_msg );?>
+		?>
                 <div class="col-sm-9">
 			<h2>Edit Your Profile :</h2><br>
 			<form method="post" class="user-registration-form form-horizontal" enctype="multipart/form-data">
