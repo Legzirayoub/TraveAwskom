@@ -5,6 +5,6 @@ include ( "connection.php" );
 		$delete_post = "DELETE from posts where post_id='$post_id'";
 		$ferteh_delete = mysqli_query( $connection, $delete_post );
 		if ( $ferteh_delete ) {
-			echo "<script>alert('Post has been deleted!')</script>";
-			echo "<script>window.open('../home.php','_self')</script>";}}
+			echo "<script>alert('Post has been deleted !')</script>";
+			echo "<script>window.open('../home.php')</script>";}}
 ?>
