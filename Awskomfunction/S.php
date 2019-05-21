@@ -52,7 +52,7 @@ if ( isset( $_GET['user_id'] ) ) {
 		$post_title = $row_posts['post_title'];
 		$content = $row_posts['post_content'];
 		$post_date = $row_posts['post_date'];
-		$user = "SELECT * from users where user_id='$user_id' AND posts='yes'";
+		$user = "SELECT * from users where user_id='$user_id'";
 		$ferteh_user = mysqli_query( $connection, $user );
 		$row_user = mysqli_fetch_array( $ferteh_user );
 		$user_name = $row_user['user_name'];
