@@ -19,25 +19,25 @@ border-radius: 10px;
   <link href="userimage/awskom.png" rel="shortcut icon">
   </head>
   <body>
-    <div class="container-fluid">
-    <div class="row">
-    <div class="col-xs-7 col-sm-6 col-lg-8">
-    <form action="" method="post" class="form-horizontal">                   
-    <?php 
+  <div class="container-fluid">
+  <div class="row">
+  <div class="col-xs-7 col-sm-6 col-lg-8">
+  <form action="" method="post" class="form-horizontal">                   
+  <?php 
 		$user 		= $_SESSION['user_email'];
-		$get_user   = "SELECT * from users where user_email='$user'";
-		$ferteh_user   = mysqli_query( $connection, $get_user );
+		$get_user       = "SELECT * from users where user_email='$user_email'";
+		$ferteh_user    = mysqli_query( $connection, $get_user );
 		$row 		= mysqli_fetch_array( $ferteh_user );
-		$user_id 	    = $row['user_id'];
-		$user_name 		= $row['user_name'];
-		$user_pass		= $row['user_pass'];
-		$user_email		= $row['user_email'];
+		$user_id 	= $row['user_id'];
+		$user_name 	= $row['user_name'];
+		$user_pass	= $row['user_pass'];
+		$user_email	= $row['user_email'];
 		$user_gender	= $row['user_gender'];
 		$user_image 	= $row['user_image'];
 		$register_date  = $row['register_date'];
-		$user_posts = "SELECT  * from posts where user_id='$user_id'";
-		$ferteh_posts = mysqli_query( $connection, $user_posts );
-		$posts = mysqli_num_rows( $ferteh_posts );
+		$user_posts     = "SELECT  * from posts where user_id='$user_id'";
+		$ferteh_posts   = mysqli_query( $connection, $user_posts );
+		$posts          = mysqli_num_rows( $ferteh_posts );
 		?>
 	<ul class="list-group">
 	<div class="form-group">
@@ -56,7 +56,7 @@ border-radius: 10px;
 	</div>
 	</div>
 	<div id="posts">
-    <?php if ( isset( $_GET['post_id'] ) ) {
+        <?php if ( isset( $_GET['post_id'] ) ) {
 	$post_id = $_GET['post_id'];}
 	$get_posts  = "SELECT * from posts where Visibility_id='1' order by post_date desc  ";
 	$ferteh_posts  = mysqli_query( $connection, $get_posts );
@@ -71,11 +71,11 @@ border-radius: 10px;
 		$row_user = mysqli_fetch_array( $ferteh_user );
 		$user_name = $row_user['user_name'];
 		$user_image = $row_user['user_image'];?>
-        <div class='panel panel-primary'>
+                <div class='panel panel-primary'>
 		<div class='panel-body'>
 		<div class='col-sm-13'>
 		<ol class='breadcrumb'>
-        <img src='userimage/<?php echo $user_image  ;?>' class='img-circle' alt="userimage" width='50' height='50'>
+                <img src='userimage/<?php echo $user_image  ;?>' class='img-circle' alt="userimage" width='50' height='50'>
 		<li><a href='/'><?php echo $user_name ?></a></li>
 		<li><?php echo $postdate ?></li>
 		</ol>
@@ -86,15 +86,15 @@ border-radius: 10px;
                 <a href='/' type='button' value='$unlike'  id='linkeBtn' class='btn btn-info'><img src='dislike.png' alt="userimage" width='20px' height='20px'></a>
                 <div class='btn-group'>
                 <?php  
-        $user_comments = "SELECT comment_id from comments where post_id='$post_id'";
+                $user_comments = "SELECT comment_id from comments where post_id='$post_id'";
 		$ferteh_comments  = mysqli_query( $connection, $user_comments );
 		$comments = mysqli_num_rows( $ferteh_comments );?>
                 <a href='/' class='navbar-brand'> View <?php echo $comments ?> comments</a>
                 <hr>
                 </div>
                 </div>
-		        </div>
-		        </div>
+		</div>
+		</div>
                 <?php } ?>
                 </div>
                 </div>  
