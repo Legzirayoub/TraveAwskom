@@ -23,7 +23,7 @@
 			<div class="col-sm-12">
 			<select name="topic" class="custom-select">
 			<option value="">Select a topic</option>
-			<?php getTopics(); ?>
+			<?php Gettopics(); ?>
 			</select>
                         <select name="Visibility" class="custom-select" required>
 			<option value="">Select Visibility</option>
@@ -47,6 +47,5 @@
 					$ferteh_update = mysqli_query( $connection, $update_post );
 					if ( $ferteh_update ) {
 					echo "<script>alert('Post has been updated!')</script>";
-					echo "<script>window.open('home.php','_self')</script>";}}?></div><?php 
-
+					echo "<script>window.open('home.php')</script>";}}?></div><?php 
 	                                include( "footer.php" ); ?>
