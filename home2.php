@@ -2,7 +2,7 @@
 <html lang="en-US">
 <?php
 include ( "Awskomfunction/connection.php" );
-include ( "Awskomfunction/Aw.php" );
+include ( "Awskomfunction/Awskom.php" );
 if (!isset( $_SESSION['user_email'] ) ) {
 include( "style/header.php" );
 include("Awskomfunction/homebevorelogin.php");?>
