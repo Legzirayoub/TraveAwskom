@@ -7,5 +7,5 @@
                     <input type="password" name="pass" class="form-control" placeholder="*****" required>
                     </div>
                     <button type="submit" name="login" class="btn btn-primary">Login</button>
-                    <br><a href="accountreset/forgotPassword.php"> Forgot Password ? </a>                                                
+                    <br><a href="resetaccount/Forgotpass.php"> Forgot Password ? </a>                                                
                     </form></div>      
