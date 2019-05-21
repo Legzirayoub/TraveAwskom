@@ -1,22 +1,22 @@
 <?php include __DIR__ . "/../../forum/header.php"; ?>
 <?php 
-		$user 	    = $_SESSION['user_email'];
-		$get_user   = "SELECT * from users where user_email='$user'";
-		$ferteh_user   = mysqli_query( $connection, $get_user );
-		$row 	    = mysqli_fetch_array( $ferteh_user );
-		$user_id    = $row['user_id'];
-		$user_name  = $row['user_name'];
-		$user_pass  = $row['user_pass'];
-		$user_email = $row['user_email'];
-		$user_gender= $row['user_gender'];
-		$user_image = $row['user_image'];
+		$user 	        = $_SESSION['user_email'];
+		$get_user       = "SELECT * from users where user_email='$user_email'";
+		$ferteh_user    = mysqli_query( $connection, $get_user );
+		$row 	        = mysqli_fetch_array( $ferteh_user );
+		$user_id        = $row['user_id'];
+		$user_name      = $row['user_name'];
+		$user_pass      = $row['user_pass'];
+		$user_email     = $row['user_email'];
+		$user_gender    = $row['user_gender'];
+		$user_image     = $row['user_image'];
 		$register_date  = $row['register_date'];
-		$user_posts = "SELECT  * from posts where user_id='$user_id'";
-		$ferteh_posts = mysqli_query( $connection, $user_posts );
-		$posts = mysqli_num_rows( $ferteh_posts );
-		$sel_msg = "SELECT * from messages where receiver='$user_id'";
-		$ferteh_msg = mysqli_query( $connection, $sel_msg );
-		$count_msg = mysqli_num_rows( $ferteh_msg );
+		$user_posts     = "SELECT  * from posts where user_id='$user_id'";
+		$ferteh_posts   = mysqli_query( $connection, $user_posts );
+		$posts          = mysqli_num_rows( $ferteh_posts );
+		$sel_msg        = "SELECT * from messages where receiver='$user_id'";
+		$ferteh_msg     = mysqli_query( $connection, $sel_msg );
+		$count_msg      = mysqli_num_rows( $ferteh_msg );
 	?>
 <!DOCTYPE html>
 <html lang="en-US">
