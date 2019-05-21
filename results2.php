@@ -27,12 +27,12 @@
 		$ferteh = mysqli_query( $connection, $select );
 		$row = mysqli_fetch_array( $ferteh );
 		$user_id = $row['user_id'];
-		$image = $row['user_image'];
+		$user_image = $row['user_image'];
 		$user_name = $row['user_name'];
 		$gender = $row['user_gender'];
 		$register_date = $row['register_date']; ?>
 		<div class='panel panel-info' >
-		<div class='panel-heading'><strong>User info :</strong></div>
+		<div class='panel-heading'><strong>User profile :</strong></div>
 		<div class='panel-body'>
 		<div class='row'>
 		<div class='col-sm-8'>
@@ -41,10 +41,10 @@
 		<li><span>Gender: </span><?php echo $gender ?></li>
 		<li><span>Member Since: </span><?php echo $register_date ?></li>
 		</ul>
-		<a href='message/messages.php?user2_id=<?php echo $user_id ?>' class='btn btn-info'>Send message</a>
+		<a href='messageuser/messages.php?user2_id=<?php echo $user_id ?>' class='btn btn-info'>message <?php echo $user_name ?></a>
 		</div>
 		<div class='col-sm-4'>
-		<img src='user/user_images/<?php echo $image ?>' class='img-circle' alt='image' width='180' height='180' >
+		<img src='userimage/<?php echo $user_image ?>' class='img-circle' alt='image' width='180' height='180' >
 		</div>
 		</div>
 		</div>
