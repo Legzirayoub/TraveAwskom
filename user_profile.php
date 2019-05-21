@@ -23,10 +23,10 @@ border-radius: 10px;
 		$select = "SELECT * from users where user_id='$user_id'";
 		$ferteh = mysqli_query( $connection, $select );
 		$row = mysqli_fetch_array( $ferteh);
-		$id = $row['user_id'];
-		$image = $row['user_image'];
-		$name = $row['user_name'];
-		$gender = $row['user_gender'];
+		$user_id = $row['user_id'];
+		$user_image = $row['user_image'];
+		$user_name = $row['user_name'];
+		$user_gender = $row['user_gender'];
 		$register_date = $row['register_date']; ?>
 		<div class='panel panel-info' >
 		<div class='panel-heading'><strong>User information :</strong></div>
@@ -34,14 +34,14 @@ border-radius: 10px;
 		<div class='row'>
 		<div class='col-sm-8'>
 		<ul class='user-details'>
-		<li><span>Name: </span><?php echo $name ?></li>
-		<li><span>Gender: </span><?php echo $gender ?></li>
+		<li><span>Name: </span><?php echo $user_name ?></li>
+		<li><span>Gender: </span><?php echo $user_gender ?></li>
 		<li><span>Member Since: </span><?php echo $register_date ?></li>
 		</ul>
-		<a href='message/messages.php?user2_id=<?php echo $user_id ?>' class='btn btn-info'>Message <?php echo $name ?></a>
+		<a href='messageuser/messages.php?user2_id=<?php echo $user_id ?>' class='btn btn-info'>Message <?php echo $user_name ?></a>
 		</div>
 		<div class='col-sm-4'>
-		<img src='user/user_images/<?php echo $image ?>' class='img-circle' width='180' alt='users' height='180' >
+		<img src='userimage/<?php echo $image ?>' class='img-circle' width='180' alt='users' height='180' >
 		</div>
 		</div>
 		</div>
@@ -59,7 +59,7 @@ border-radius: 10px;
 		$post_title = $row_posts['post_title'];
 		$content = $row_posts['post_content'];
 		$post_date = $row_posts['post_date'];
-		$user = "SELECT * from users where user_id='$user_id' AND posts='yes'";
+		$user = "SELECT * from users where user_id='$user_id' ";
 		$ferteh_user = mysqli_query( $connection, $user );
 		$row_user    = mysqli_fetch_array( $ferteh_user );
 		$user_name   = $row_user['user_name'];
@@ -68,7 +68,7 @@ border-radius: 10px;
 		<div class='panel-body'>
 		<div class='col-sm-13'>
 		<ol class='breadcrumb'>
-                <img src='user/user_images/<?php echo $user_image ?>' class='img-circle' alt='users' width='50' height='50'>
+                <img src='userimage/<?php echo $user_image ?>' class='img-circle' alt='users' width='50' height='50'>
 		<li><a href='user_profile.php?user_id=$user_id'><?php echo $user_name ?></a></li>
 		<li><?php echo $post_date ?></li>
 		</ol>
