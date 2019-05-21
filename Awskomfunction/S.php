@@ -30,10 +30,10 @@ border-radius: 10px;
 		</ul>
 		<a href='message/messages.php?user2_id=<?php echo $user_id ?>' class='btn btn-info'>Message <?php echo $name ?></a>
                 <a href='message/messages.php?user2_id=<?php echo $user_id ?>' class='btn btn-info'>My activity -work on it-</a>
-                <a href='edit_profile.php?user_id=<?php echo $user_id ?>' class='btn btn-info'>Edit profile </a>
+                <a href='editpro.php?user_id=<?php echo $user_id ?>' class='btn btn-info'>Edit profile </a>
 		</div>
 		<div class='col-sm-4'>
-		<img src='user/user_images/<?php echo $image ?>' class='img-circle' width='180' alt='users' height='180' >
+		<img src='userimage/<?php echo $image ?>' class='img-circle' width='180' alt='users' height='180' >
 		</div>
 		</div>
 		</div>
@@ -61,7 +61,7 @@ if ( isset( $_GET['user_id'] ) ) {
 		<div class='panel-body'>
 		<div class='col-sm-13'>
 		<ol class='breadcrumb'>
-                <img src='user/user_images/<?php echo $user_image ?>' class='img-circle' width='50' height='50' alt='userimage'>
+                <img src='userimage/<?php echo $user_image ?>' class='img-circle' width='50' height='50' alt='userimage'>
 		<li><a href='user_profile.php?user_id=<?php echo $user_id ?>'><?php echo $user_name ?></a></li>
 		<li><?php echo $post_date ?></li>
 		</ol>
@@ -77,7 +77,7 @@ if ( isset( $_GET['user_id'] ) ) {
                 </div>
 		<div class='btn-group'>
 		<a href='changepost.php?post_id=<?php echo $post_id ?>' class='btn btn-info'>Edit</a>
-		<a href='Aw-func/delete_post.php?post_id=<?php echo $post_id ?>' class='btn btn-danger'>Delete</a>
+		<a href='Awskomfunction/deletepost.php?post_id=<?php echo $post_id ?>' class='btn btn-danger'>Delete</a>
 		</div>
 		</div>
 		</div>
