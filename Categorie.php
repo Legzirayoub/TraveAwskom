@@ -1,12 +1,12 @@
 <?php 
 	session_start(); 
-	include ( "Aw-func/connection.php" );
-    include ( "Aw-func/Aw.php" );
+	include ( "Awskomfunction/connection.php" );
+        include ( "Awskomfunction/Awskom.php" );
 	if ( !isset( $_SESSION['user_email'] ) ) {
 	header( "location: index.php" );
 	}else {
-    include ( "header/header.php" );
-    include( "style/header.php" );
+        include ( "header/header.php" );
+        include( "style/header.php" );
 ?>
 <div class="col-sm-9">
 		<form action="home.php?id=<?php echo $user_id; ?>" method="post" class="form-horizontal">
@@ -39,10 +39,10 @@
 				</div>
 				</div>
 			        </form>
-			<?php Insertpost(); ?>
-		        <div id="posts">
-                    <?php 
-	                if ( isset( $_GET['topic'] ) ) {
+			        <?php Insertpost(); ?>
+		                <div id="posts">
+                                <?php 
+	            if ( isset( $_GET['topic'] ) ) {
                     $topic_id = $_GET['topic'];
 					$query = "SELECT * from topics where topic_id='$topic_id'";
 					$ferteh_query = mysqli_query( $connection, $query );
@@ -50,7 +50,7 @@
 					$topic_name = $row['topic_title'];
 				       }?>
                        <h3>All post in '<?php echo $topic_name; ?>' Topic.</h3>
-				       <?php if ( isset( $_GET['topic'] ) ) {
+		       <?php if ( isset( $_GET['topic'] ) ) {
 	$topic_id = $_GET['topic'];}
 	$get_posts  = "SELECT * from posts where topic_id='$topic_id' ORDER by 1 DESC";
 	$ferteh_posts  = mysqli_query( $connection, $get_posts );
@@ -80,7 +80,7 @@
 		<a href='One.php?post_id=<?php echo $post_id ?>' class='btn btn-info'>Reply</a>
                 <div class='btn-group'>
                 <?php
-                $user_comments         = "SELECT comment_id from comments where post_id='$post_id'";
+                        $user_comments         = "SELECT comment_id from comments where post_id='$post_id'";
 		        $ferteh_comments       = mysqli_query( $connection, $user_comments );
 		        $comments              = mysqli_num_rows( $ferteh_comments ); ?>
                 <a href='One.php?post_id=<?php echo $post_id ?>' class='navbar-brand'>View <?php echo $comments ?>comments </a>
