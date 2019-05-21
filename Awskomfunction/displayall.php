@@ -1,12 +1,4 @@
 <head>
-<style>
-ol.breadcrumb {
-border: 1px solid;
-padding: 10px;
-background-color: #D3D3D3;
-border-radius: 10px;
-}
-</style>
   <meta charset="utf-8">
   <meta name="viewport" content="width=500, initial-scale=1">
   <title>AWSKOM</title>
