@@ -5,7 +5,7 @@ include ( "Awskomfunction/connection.php" );
 include ( "Awskomfunction/Aw.php" );
 if (!isset( $_SESSION['user_email'] ) ) {
 include( "forum/header.php" );
-include("Awskomfunction/home-bevore-login.php");?>
+include("Awskomfunction/homebevorelogin.php");?>
 <?php  
 }else {
 include ( "head/header/header.php" );
