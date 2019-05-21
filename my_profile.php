@@ -6,10 +6,10 @@ include ( "Awskomfunction/Awskom.php" );
 	header( "location: index.php" );
 	}else {
  include ( "head/header/header.php" );
- include( "forum/header.php" );
+ include( "style/header.php" );
 ?>
 		<div class="col-sm-9">
-		<?php my_profile(); ?>
+		<?php myprofile(); ?>
 			<div id="posts">
 				<br>
 				<?php ownposts(); ?>
