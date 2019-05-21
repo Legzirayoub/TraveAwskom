@@ -5,7 +5,7 @@ include( "Awskomfunction/connecttodatabase.php" );
 	header( "location: home.php" );
 	}else {
                 include ('forum/header.php');  
-		include( "head/header/header_login.php" );
+		include( "head/header/header-login.php" );
 		include( "home-html.php/home.php" );
 		include( "login.php" );
 		}?>
