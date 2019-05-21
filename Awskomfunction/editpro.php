@@ -14,10 +14,9 @@
                 $user_posts = "SELECT  * from posts where user_id='$user_id'";
 		$ferteh_posts = mysqli_query( $connection, $user_posts );
 		$posts = mysqli_num_rows( $ferteh_posts );
-		$sel_msg = "SELECT * from messages where receiver='$user_id' AND status='unread' order by 1 DESC";
+		$sel_msg = "SELECT * from messages where receiver='$user_id' AND status='Unseen' order by 1 DESC";
 		$ferteh_msg = mysqli_query( $connection, $sel_msg );
 		$count_msg = mysqli_num_rows( $ferteh_msg );?>
-		
                 <div class="col-sm-9">
 			<h2>Edit Your Profile :</h2><br>
 			<form method="post" class="user-registration-form form-horizontal" enctype="multipart/form-data">
@@ -66,7 +65,6 @@
 				        if ( isset( $_POST['update'] ) ) {
 					$user_name = $_POST['user_name'];
 					$user_pass = $_POST['user_pass'];
-                                
 					$user_image  = $_FILES['user_image']['name'];
 					$user_image  = $user_id.$user_image;
 					$image_tmp = $_FILES['user_image']['tmp_name'];
@@ -79,7 +77,7 @@
 					$ferteh = mysqli_query( $connection, $update );
 					if ( $ferteh ) {
 					echo "<script>alert('Profile Updat succesful !')</script>";
-					echo "<script>window.open( 'home.php', '_self' )</script>";
+					echo "<script>window.open( 'home.php')</script>";
 					}else { echo 'File is not valid. Please try again'; }}?>
 		        </div>
 <?php include( "footer.php" ); ?>
