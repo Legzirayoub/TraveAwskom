@@ -1,7 +1,7 @@
 <?php 
 	session_start(); 
-	include ( "Aw-func/connection.php" );
-        include ( "Aw-func/Aw.php" );
+	include ( "Awskomfunction/connection.php" );
+        include ( "Awskomfunction/Awskom.php" );
 	if ( !isset( $_SESSION['user_email'] ) ) {
 	header( "location: index.php" );
 	}else {
@@ -24,7 +24,7 @@
 		$row_user = mysqli_fetch_array( $ferteh_user );
 		$user_name = $row_user['user_name'];
 		$user_image = $row_user['user_image']; ?>
-        <div class='panel panel-default'>
+                <div class='panel panel-default'>
 		<div class='panel-body'>
 		<div class='col-sm-13'>
 		<ol class='breadcrumb'>
