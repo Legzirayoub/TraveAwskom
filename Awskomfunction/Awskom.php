@@ -2,16 +2,16 @@
 function Gettopics() {
 	global $connection;
 	$get_topics = "SELECT * from topics";
-	$run_topics = mysqli_query( $connection, $get_topics );
-	while ( $row = mysqli_fetch_array( $run_topics ) ) {
+	$ferteh_topics = mysqli_query( $connection, $get_topics );
+	while ( $row = mysqli_fetch_array( $ferteh_topics ) ) {
 		$topic_id = $row['topic_id'];
 		$topic_title = $row['topic_title'];
 		echo "<option value='$topic_id'>$topic_title</option>";}}
 function GetVisibility() {
 	global $connection;
 	$get_Visibility = "SELECT * from Visibility";
-	$run_Visibility = mysqli_query( $connection, $get_Visibility );
-	while ( $row = mysqli_fetch_array( $run_Visibility ) ) {
+	$ferteh_Visibility = mysqli_query( $connection, $get_Visibility );
+	while ( $row = mysqli_fetch_array( $ferteh_Visibility ) ) {
 		$Visibility_id = $row['Visibility_id'];
 		$Visibility_title = $row['Visibility_title'];
 		echo "<option value='$Visibility_id'>$Visibility_title</option>";}}
@@ -25,7 +25,7 @@ function Insertpost() {
 		$Visibility = $_POST['Visibility'];
                 $IP = $_SERVER['REMOTE_ADDR']; 
 		if ( $content == '' ) {
-			echo "<h2>Please enter description.</h2>";
+			echo "<h2>Enter description ...</h2>";
 			exit();
 		}else {
 			$insert = "INSERT into posts(user_id,topic_id,Visibility_id,post_title,post_content,post_date,IP) values('$user_id','$topic','$Visibility','$title','$content',NOW(),'".$IP."')";
