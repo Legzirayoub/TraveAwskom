@@ -4,30 +4,30 @@
 <div class="col-sm-3">
 	<?php 
         session_start(); 
-        include __DIR__ . "/../Aw-func/connection.php";
+        include __DIR__ . "/../../Aw-func/connection.php";
 		$user 		= $_SESSION['user_email'];
-		$ara_user   = "SELECT * from users where user_email='$user'";
-		$ferteh_user   = mysqli_query( $connection, $ara_user );
-		$row 	    = mysqli_fetch_array( $ferteh_user );
-                $post_id    = $row['post_id'];
-	        $user_id    = $row['user_id'];
-		$user_name  = $row['user_name'];
-	        $user_posts = "SELECT  * from posts where user_id='$user_id'";
-		$ferteh_posts  = mysqli_query( $connection, $user_posts );
-		$posts      = mysqli_num_rows( $ferteh_posts );
-		$khtar_msg    = "SELECT * from messages where receiver='$user_id' AND status='unread' order by 1 DESC";
-		$ferteh_msg    = mysqli_query( $connection, $khtar_msg );
-		$msg  = mysqli_num_rows( $ferteh_msg );
-                $ara_user   = "SELECT * from users where user_id='$user_id'";
-		$ferteh_user   = mysqli_query( $connection, $ara_user );
-		$row 	    = mysqli_fetch_array( $ferteh_user );
-                $post_id    = $row['post_id'];
-	        $user_id    = $row['user_id'];
-		$user_name  = $row['user_name'];
-		$comment_id  = $row['comment_id'];
-                $user_comment    = "SELECT * from comments where post_id='$post_id' AND comment_id='$comment_id'";
-		$ferteh_comment    = mysqli_query( $connection, $user_comment );
-		$comment  = mysqli_num_rows( $ferteh_comment );
+		$ara_user       = "SELECT * from users where user_email='$user'";
+		$ferteh_user    = mysqli_query( $connection, $ara_user );
+		$row 	        = mysqli_fetch_array( $ferteh_user );
+                $post_id        = $row['post_id'];
+	        $user_id        = $row['user_id'];
+		$user_name      = $row['user_name'];
+	        $user_posts     = "SELECT  * from posts where user_id='$user_id'";
+		$ferteh_posts   = mysqli_query( $connection, $user_posts );
+		$posts          = mysqli_num_rows( $ferteh_posts );
+		$khtar_msg      = "SELECT * from messages where receiver='$user_id' AND status='unread' order by 1 DESC";
+		$ferteh_msg     = mysqli_query( $connection, $khtar_msg );
+		$msg            = mysqli_num_rows( $ferteh_msg );
+                $ara_user       = "SELECT * from users where user_id='$user_id'";
+		$ferteh_user    = mysqli_query( $connection, $ara_user );
+		$row 	        = mysqli_fetch_array( $ferteh_user );
+                $post_id        = $row['post_id'];
+	        $user_id        = $row['user_id'];
+		$user_name      = $row['user_name'];
+		$comment_id     = $row['comment_id'];
+                $user_comment   = "SELECT * from comments where post_id='$post_id' AND comment_id='$comment_id'";
+		$ferteh_comment = mysqli_query( $connection, $user_comment );
+		$comment        = mysqli_num_rows( $ferteh_comment );
                 ?>
 					               <a href="#" class="navbar-brand" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><span class="caret"></span></a>
 					               <ul class="dropdown-menu">       
@@ -39,7 +39,7 @@
 						       while ( $row = mysqli_fetch_array( $ferteh_topics ) ) {
 						       $topic_id = $row['topic_id'];
 						       $topic_title = $row['topic_title'];
-		                                       echo "<li><a href='topic.php?topic=$topic_id'>$topic_title</a></li>";}?><hr>
+		                                       echo "<li><a href='Categorie.php?topic=$topic_id'>$topic_title</a></li>";}?><hr>
 <li><a href="edit_profile.php?user_id=<?php echo $user_id; ?>" ><i class="fa fa-cogs"> Edit Account</i></a></li>                    
 <li><a href="logout.php" >Logout</a></li></ul>
 <a class="navbar-brand" ><i class="fas fa-grip-lines-vertical" style="font-size:15px;"></i></a>
