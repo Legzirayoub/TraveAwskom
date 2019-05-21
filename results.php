@@ -1,16 +1,14 @@
 <?php 
 	session_start(); 
-	include ( "Awskomfunction/connection.php" );
+	include ( "Awskomfunction/connecttodatabase.php" );
         include ( "Awskomfunction/Awskom.php" );
 	if ( !isset( $_SESSION['user_email'] ) ) {
 	header( "location: index.php" );
 	}else {
 	include ( "head/header/header.php" );
         include( "style/header.php" );?>
-		
-                <div class="col-sm-9">
-		<h2>Search results:</h2>
-			
+        <div class="col-sm-9">
+	<h2>Search results:</h2>	
         <?php
 	if ( isset( $_GET['search_topic'] ) ) {
 	$search_term = $_GET['search_topic'];}
@@ -31,8 +29,7 @@
 		$row_user    = mysqli_fetch_array( $ferteh_user );
 		$user_name   = $row_user['user_name'];
 		$user_image  = $row_user['user_image']; ?>
-		
-			<div class   ='panel panel-default'>
+		<div class   ='panel panel-default'>
 		<div class   ='panel-body'>
 		<div class   ='col-sm-2'>
 		<img src='userimage/<?php echo $user_image ?>' class='img-circle' width='100' alt='image' height='100'>
