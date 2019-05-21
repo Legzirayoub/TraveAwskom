@@ -6,6 +6,6 @@
 	header( "location: index.php" );
 	}else {
 	include ( "head/header/header.php" );
-        include( "forum/header.php" );
+        include( "style/header.php" );
         ?>
 <?php include ("head/header/editpost.php"); }?>
