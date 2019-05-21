@@ -45,6 +45,6 @@
 			</form>
 			</div>
 			<div class="form-group"> 	
-<a href="user_profile.php?user_id=<?php echo $user_id; ?>" >  <img src="user/user_images/<?php echo $user_image; ?>" class="img-circle" width="50px" height="50px"alt="users"><?php echo $user_name; ?></a>
+<a href="user_profile.php?user_id=<?php echo $user_id; ?>" >  <img src="userimage/<?php echo $user_image; ?>" class="img-circle" width="50px" height="50px"alt="users"><?php echo $user_name; ?></a>
 </div>
 </form></div> 
