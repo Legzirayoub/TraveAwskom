@@ -6,7 +6,7 @@
 	header( "location: index.php" );
 	}else {
         include ( "head/header/header.php" );
-        include( "forum/header.php" );
+        include( "style/header.php" );
         ?>
 		        <div class="col-sm-9">
 			<h2>You search for someone ? 
