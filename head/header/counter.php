@@ -41,7 +41,7 @@
 						       $topic_title = $row['topic_title'];
 		                                       echo "<li><a href='Categorie.php?topic=$topic_id'>$topic_title</a></li>";}?><hr>
 <li><a href="edit_profile.php?user_id=<?php echo $user_id; ?>" ><i class="fa fa-cogs"> Edit Account</i></a></li>                    
-<li><a href="logout.php" >Logout</a></li></ul>
+<li><a href="login-logout/logout.php" >Logout</a></li></ul>
 <a class="navbar-brand" ><i class="fas fa-grip-lines-vertical" style="font-size:15px;"></i></a>
 <a class="navbar-brand" href="/../home.php"><i class="fa fa-home" style="font-size:18px;"></i></a><a class="navbar-brand" href="/../searchforsomeone.php"><i class="fa fa-globe" style="font-size:18px;" ></i></a>
 <a class="navbar-brand" ><i class="fas fa-grip-lines-vertical" style="font-size:15px;"></i></a>
