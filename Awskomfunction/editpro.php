@@ -1,19 +1,19 @@
-	<?php   $user 	    = $_SESSION['user_email'];
-		$get_user   = "SELECT * from users where user_email='$user'";
-		$ferteh_user = mysqli_query( $connection, $get_user );
-		$row 	= mysqli_fetch_array( $ferteh_user );
-		$user_id = $row['user_id'];
+	<?php   $user 	        = $_SESSION['user_email'];
+		$get_user       = "SELECT * from users where user_email='$user'";
+		$ferteh_user    = mysqli_query( $connection, $get_user );
+		$row 	        = mysqli_fetch_array( $ferteh_user );
+		$user_id        = $row['user_id'];
 		$user_name 	= $row['user_name'];
 		$user_pass	= $row['user_pass'];
 		$user_email	= $row['user_email'];
 		$user_gender	= $row['user_gender'];
 		$user_image 	= $row['user_image'];
 		$register_date  = $row['register_date'];
-                $fromCoun = $row['fromCoun'];
-                $toCoun = $row['toCoun'];
-                $user_posts = "SELECT  * from posts where user_id='$user_id'";
-		$ferteh_posts = mysqli_query( $connection, $user_posts );
-		$posts = mysqli_num_rows( $ferteh_posts );
+                $fromCoun       = $row['fromCoun'];
+                $toCoun         = $row['toCoun'];
+                $user_posts     = "SELECT  * from posts where user_id='$user_id'";
+		$ferteh_posts   = mysqli_query( $connection, $user_posts );
+		$posts          = mysqli_num_rows( $ferteh_posts );
 		?>
                 <div class="col-sm-9">
 			<h2>Edit Your Profile :</h2><br>
@@ -68,7 +68,7 @@
 					$image_tmp = $_FILES['user_image']['tmp_name'];
 	                                $extsAllowed = array( 'jpg', 'jpeg', 'png', 'gif' );   
 	                                $extUpload = strtolower( substr( strrchr($_FILES['file']['name'], '.') ,1) ) ;	
-					move_uploaded_file( $image_tmp, "user/user_images/$user_image" );
+					move_uploaded_file( $image_tmp, "userimage/$user_image" );
 					$update = "UPDATE users set user_name='$user_name',user_pass='$user_pass',
                                         user_image='$user_image'
                                         where user_id='$user_id'";
@@ -76,6 +76,6 @@
 					if ( $ferteh ) {
 					echo "<script>alert('Profile Updat succesful !')</script>";
 					echo "<script>window.open( 'home.php')</script>";
-					}else { echo 'File is not valid. Please try again'; }}?>
+					}else { echo 'File is not valid. Please try again later'; }}?>
 		        </div>
 <?php include( "footer.php" ); ?>
