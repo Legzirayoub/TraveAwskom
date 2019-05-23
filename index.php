@@ -6,7 +6,7 @@ include( "Awskomfunction/connecttodatabase.php" );
 	}else {
                 include ('style/header.php');  
 		include( "head/header/header-login.php" );
-		include( "home-html.php/home.php" );
+		include( "home.php/home.php" );
 		include( "login-logout/login.php" );
 		}?>
                 <?php include ("footer.php"); ?>
