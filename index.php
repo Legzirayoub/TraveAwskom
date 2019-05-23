@@ -2,7 +2,7 @@
 <?php 
 include( "Awskomfunction/connecttodatabase.php" );
 	if ( isset( $_SESSION['user_email'] ) ) {
-	header( "location: home.php" );
+	header( "location:Awskomfunction/homebevorlogin.php" );
 	}else {
                 include ('style/header.php');  
 		include( "head/header/header-login.php" );
