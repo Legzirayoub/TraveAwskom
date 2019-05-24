@@ -24,15 +24,11 @@ function Insertpost() {
 		$topic = $_POST['topic'];
 		$Visibility = $_POST['Visibility'];
                 $IP = $_SERVER['REMOTE_ADDR']; 
-		if ( $content == '' ) {
-			echo "<h2>Enter description ...</h2>";
-			exit();
-		}else {
 			$insert = "INSERT into posts(user_id,topic_id,Visibility_id,post_title,post_content,post_date,IP) values('$user_id','$topic','$Visibility','$title','$content',NOW(),'".$IP."')";
 			$ferteh = mysqli_query( $connection, $insert );
 			if ( $ferteh ) {
 			$update = "UPDATE users set posts='Yes' where user_id='$user_id'";
-			$ferteh_update = mysqli_query( $connection, $update );}}}}	                                          
+			$ferteh_update = mysqli_query( $connection, $update );}}}	                                          
 function travelwith() {
 	global $connection;
         $user = "SELECT * from users where interested='yes' LIMIT 0,9";
