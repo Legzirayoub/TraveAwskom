@@ -14,9 +14,6 @@
 		$user_posts     = "SELECT  * from posts where user_id='$user_id'";
 		$ferteh_posts   = mysqli_query( $connection, $user_posts );
 		$posts          = mysqli_num_rows( $ferteh_posts );
-		$sel_msg        = "SELECT * from messages where receiver='$user_id'";
-		$ferteh_msg     = mysqli_query( $connection, $sel_msg );
-		$count_msg      = mysqli_num_rows( $ferteh_msg );
 	?>
 <!DOCTYPE html>
 <html lang="en-US">
