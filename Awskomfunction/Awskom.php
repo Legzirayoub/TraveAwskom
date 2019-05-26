@@ -43,7 +43,7 @@ function travelwith() {
 		$user_image = $row['user_image'];
                 $awskom .= "<div class='panel panel-primary'>";
 		$awskom .= "<div class='panel-body'>";
-                $awskom .= "<a href='user_profile.php?user_id=$user_id'><img src='user/user_images/$user_image'class='img-circle' alt='image' width='50' height='50' ></a>";
+                $awskom .= "<a href='user_profile.php?user_id=$user_id'><img src='userimage/$user_image'class='img-circle' alt='image' width='50' height='50' ></a>";
 		$awskom .= "<li><span>Username: </span>$user_name</li>";
                 $awskom .= "<li><span>Gender: </span>$user_gender</li>";
                 $awskom .= "<li><span>From: </span>$fromCoun<span> To: $toCoun</span></li>";
@@ -66,7 +66,7 @@ function travelwithall() {
 		$user_image = $row['user_image'];
                 $awskom .= "<div class='panel panel-primary'>";
 		$awskom .= "<div class='panel-body'>";
-                $awskom .= "<a href='user_profile.php?user_id=$user_id'><img src='user/user_images/$user_image'class='img-circle' alt='image' width='50' height='50' ></a>";
+                $awskom .= "<a href='user_profile.php?user_id=$user_id'><img src='userimage/$user_image'class='img-circle' alt='image' width='50' height='50' ></a>";
 		$awskom .= "<li><span>Username: </span>$user_name</li>";
                 $awskom .= "<li><span>Gender: </span>$user_gender</li>";
                 $awskom .= "<li><span>From: </span>$fromCoun<span> To: $toCoun</span></li>";
