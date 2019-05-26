@@ -19,7 +19,7 @@ border-radius: 10px;
 		$gender = $row['user_gender'];
 		$register_date = $row['register_date']; ?>
 		<div class='panel panel-info' >
-		<div class='panel-heading'><strong>User information :</strong></div>
+		<div class='panel-heading'><strong>User Profile :</strong></div>
 		<div class='panel-body'>
 		<div class='row'>
 		<div class='col-sm-8'>
