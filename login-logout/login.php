@@ -1,8 +1,8 @@
 <?php 
 	if ( isset( $_POST['login']) ) {
 		$email = mysqli_real_escape_string( $connection, $_POST['email'] );
-		$pass  = mysqli_real_escape_string( $connection, $_POST['pass'] );
-		$ara_user = "SELECT * FROM users WHERE user_email='$email' AND user_pass='$pass'";
+		$password  = mysqli_real_escape_string( $connection, $_POST['password'] );
+		$ara_user = "SELECT * FROM users WHERE user_email='$email' AND user_password='$password'";
 		$ferteh_user = mysqli_query( $connection, $ara_user );
 		$security = mysqli_num_rows( $ferteh_user );
 		$Data = mysqli_fetch_array( $ferteh_user );
