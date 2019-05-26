@@ -46,6 +46,6 @@
 					$update_post = "UPDATE posts set post_title='$title', post_content='$content', topic_id='$topic_id',Visibility_id='$Visibility_id' where post_id='$get_id'";
 					$ferteh_update = mysqli_query( $connection, $update_post );
 					if ( $ferteh_update ) {
-					echo "<script>alert('Post has been updated!')</script>";
+					echo "<script>alert('Post has been updated succefully!')</script>";
 					echo "<script>window.open('home.php')</script>";}}?></div><?php 
 	                                include( "footer.php" ); ?>
