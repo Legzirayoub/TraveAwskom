@@ -19,7 +19,7 @@
 		$post_title = $row_posts['post_title'];
 		$content = $row_posts['post_content'];
 		$post_date = $row_posts['post_date'];
-		$user = "SELECT * from users where user_id='$user_id' AND posts='yes'";
+		$user = "SELECT * from users where user_id='$user_id' AND posts='1'";
 		$ferteh_user = mysqli_query( $connection, $user );
 		$row_user = mysqli_fetch_array( $ferteh_user );
 		$user_name = $row_user['user_name'];
@@ -28,7 +28,7 @@
 		<div class='panel-body'>
 		<div class='col-sm-13'>
 		<ol class='breadcrumb'>
-        <img src='userimage/<?php echo $user_image ?>' class='img-circle' width='50' height='50'>
+                <img src='userimage/<?php echo $user_image ?>' class='img-circle' width='50' height='50'>
 		<li><a href='user_profile.php?user_id=<?php echo $user_id ?>'><?php echo $user_name ?></a></li>
 		<li><?php echo $post_date ?></li>
 		</ol>
@@ -41,7 +41,7 @@
 		if ( isset( $_POST['reply'] ) ) {
 			$comment = $_POST['comment'];
 			$user_email = $_SESSION['user_email'];
-            $IP = $_SERVER['REMOTE_ADDR'];
+                        $IP = $_SERVER['REMOTE_ADDR'];
 			$current_user = "SELECT * from users where user_email='$user_email'";
 			$ferteh_current_user = mysqli_query( $connection, $current_user );
 			$current_user_row = mysqli_fetch_array( $ferteh_current_user );
@@ -61,12 +61,12 @@
 		$row_user = mysqli_fetch_array( $ferteh_user );
 		$user_name = $row_user['user_name'];
 		$user_image = $row_user['user_image'];
-        ?>
+                ?>
 		<div class='row single-comment'>
 		<div class='col-sm-10'>
 		<div class='panel panel-default'>
 		<div class='panel-heading'>
-        <div class='col-sm-2'>
+                <div class='col-sm-2'>
 		<div class='thumbnail'>
 		<img src='userimage/<?php echo $user_image ?>' class='img-circle'>
 		</div>
@@ -80,22 +80,22 @@
 		</div>
 		</div>
 		</div>
-        <?php } ?>
-        <form action='' method='post' class='form-horizontal'>
+                <?php } ?>
+                <form action='' method='post' class='form-horizontal'>
 		<div class='form-group'>
 		<div class='col-sm-12'>
 		<textarea name='comment' class='form-control' cols='30' rows='10' placeholder=' reply...' required></textarea>
 		</div>
 		</div>
 		<div class='form-group'>
-	    <div class='col-sm-12'>
+	        <div class='col-sm-12'>
 		<input type='submit' name='reply' class='btn btn-info pull-right' value='Reply'>
 		</div>
 		</div>
 		</form>						
-	    <?php  }}  ?>
+	        <?php  }}  ?>
 		</div>
 		</div>
-<?php 
+                <?php 
 include( "footer.php" );
 ?>
