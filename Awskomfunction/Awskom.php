@@ -27,7 +27,7 @@ function Insertpost() {
 			$insert = "INSERT into posts(user_id,topic_id,Visibility_id,post_title,post_content,post_date,IP) values('$user_id','$topic','$Visibility','$title','$content',NOW(),'".$IP."')";
 			$ferteh = mysqli_query( $connection, $insert );
 			if ( $ferteh ) {
-			$update = "UPDATE users set posts='Yes' where user_id='$user_id'";
+			$update = "UPDATE users set posts='1' where user_id='$user_id'";
 			$ferteh_update = mysqli_query( $connection, $update );}}}	                                          
 function travelwith() {
 	global $connection;
