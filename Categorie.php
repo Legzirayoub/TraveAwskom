@@ -9,37 +9,22 @@
         include( "style/header.php" );
 ?>
 <div class="col-sm-9">
-		<form action="home.php?id=<?php echo $user_id; ?>" method="post" class="form-horizontal">
-			<h2> What's in your mind ?  </h2>
-				<div class="form-group">
+	                        <div class="form-group">
 				<div class="col-sm-12">
-				<input type="text" name="title" class="form-control" placeholder="Write a Title" required>
 				</div>
 				</div>
 				<div class="form-group">
 				<div class="col-sm-12">
-				<textarea name="content" class="form-control" cols="30" rows="10" placeholder="Write description..." required></textarea>
 				</div>
 				</div>
 				<div class="form-group">
 				<div class="col-sm-12">
-				<select name="topic" class="custom-select">
-				<option value="">Select a topic</option>
-				<?php Gettopics(); ?>
-				</select>
-                                <select name="Visibility" class="custom-select" required>
-				<option value="">Select Visibility</option>
-				<?php getVisibility(); ?> 
-				</select>
 				</div>
 				</div>
 				<div class="form-group">
 				<div class="col-sm-12">
-				<input type="submit" name="sub" class="btn btn-info pull-right" value="Post">
 				</div>
 				</div>
-			        </form>
-			        <?php Insertpost(); ?>
 		                <div id="posts">
                                 <?php 
 	            if ( isset( $_GET['topic'] ) ) {
