@@ -19,3 +19,14 @@ AddOutputFilterByType DEFLATE application/x-javascript
 <files *.html>
 SetOutputFilter DEFLATE
 </files>
+
+RewriteEngine On
+RewriteCond %{REQUEST_URI} !\.php$ [NC]
+RewriteCond %{REQUEST_URI} [^/]$
+RewriteRule ^([^\.]+)$ $1.php [NC,L]
+
+# Secure php.ini and .htaccess
+RewriteRule ^(php\\.ini|\\.htaccess) - [NC,F]
+
+#Enable PHP short open tags
+php_value short_open_tag 1
