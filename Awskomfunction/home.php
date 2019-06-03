@@ -15,7 +15,7 @@ border-radius: 10px;
 						       while ( $row      = mysqli_fetch_array( $ferteh_topics ) ) {
 						       $topic_id         = $row['topic_id'];
 						       $topic_title      = $row['topic_title'];
-		                                       echo "<li><a href='travelcategorie.php?topic=$topic_title'>$topic_title</a></li>";}?><hr>
+		                                       echo "<li><a href='Categorie.php?topic=$topic_title'>$topic_title</a></li>";}?><hr>
 </div>
 <div class="col-sm-6">
 <form action="home.php" method="post" class="form-horizontal">
@@ -42,7 +42,6 @@ border-radius: 10px;
         <div class="row clearfix">
         <div class="col-md-12 column">
         <div class = "panel-heading">
-		
 <h3 class = "panel-title"> <a href="my_profile_like_user01.php?user_id=<?php echo $user_id; ?>"><img src="userimage/<?php echo $user_image; ?>" class="img-circle"  alt="Bear" width="30px" height="30px"></a> <?php echo $user_name; ?> Creat post</h3>
 </div>
 <textarea name="content" class="form-control" cols="15" rows="4" placeholder="<?php echo $user_name; ?> : What's in your mind ?" required></textarea>
@@ -97,9 +96,9 @@ border-radius: 10px;
 		<div class='col-sm-10'>
 		<ol class='breadcrumb'>
 		<li><a href='user_profile.php?user_id=<?php echo $user_id ?>'>
-        <img src='userimage/<?php echo $user_image ?>' class='img-circle'  alt="Bear" width='50' height='50'>
+                <img src='userimage/<?php echo $user_image ?>' class='img-circle'  alt="Bear" width='50' height='50'>
                 <?php echo $user_name ?></a>
-                <i class='fas fa-angle-right'><?php echo "<li><a href='travelcategorie.php?topic=$topic_title'>$topic_title</a></li>"; ?></i>
+                <i class='fas fa-angle-right'><?php echo "<li><a href='Categorie.php?topic=$topic_title'>$topic_title</a></li>"; ?></i>
                 </li>
 		<li><?php echo $post_date ?></li>
                 </ol>
