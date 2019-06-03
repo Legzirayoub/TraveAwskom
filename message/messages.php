@@ -5,7 +5,7 @@
 	if ( !isset( $_SESSION['user_email'] ) ) {
 	header( "location: /../index.php" );
 	}else {
-        include __DIR__ . "/../header/headermsg.php";
+        include __DIR__ . "/../head/header/headermsg.php";
         include __DIR__ . "/../forum/header.php";
         include("storedmsg/msg.php");
 ?>
