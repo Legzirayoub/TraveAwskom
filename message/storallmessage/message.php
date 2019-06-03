@@ -31,11 +31,11 @@ $register_date = $row['register_date'];
 			    <?php 
 				  if ( isset( $_POST['message'] ) ) {
 					$message_topic = $_POST['message_topic'];
-					$insert = "INSERT into messages(sender,receiver,message_topic,reply,status,message_type,message_date) values('$user_id','$user2_id','$message_topic','no_reply','unread','dad',NOW())";
+					$insert = "INSERT into messages(sender,receiver,message_topic,reply,status,message_type,message_date) values('$user_id','$user2_id','$message_topic','noreply','novue','dad',NOW())";
 					$ferteh_insert = mysqli_query( $connection, $insert );
 					if ( $ferteh_insert ) {
 					echo "<font color='red'><h3>Message was sent to $user_name successfully</h3></font>";
 					}else {
-					echo "<font color='red'><h3>Message was not sent to $user_name successfully</h3></font>";									
+					echo "<font color='red'><h3>Error Message was not sent to $user_name successfully try again later</h3></font>";									
 					}}?>
 </div>
