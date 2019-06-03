@@ -7,5 +7,5 @@ session_start();
 	}else {
               include ('style/header.php'); 
               include ('head/header/header_register.php');  
-	      include( "head/header/registration-form.php" );
+	      include( "head/header/registration_form.php" );
 	      }?>
