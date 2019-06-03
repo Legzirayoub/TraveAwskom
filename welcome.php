@@ -127,7 +127,7 @@ input:hover,
    <div class='panel-body'>
   <div class="col-sm-3">
   <div class="card">
-  <img src="user/user_images/83young-woman-1745173_1920.jpg" alt="John" style="width:100%">
+  <img src="userimage/83young-woman-1745173_1920.jpg" alt="John" style="width:100%">
   <h1>Loveawskom</h1>
   <p class="title">Feel the vacation</p>
   <p>Home University</p>
@@ -141,7 +141,7 @@ input:hover,
   <div class="clearfix visible-xs-block"></div>
   <div class="col-sm-3">
   <div class="card">
-  <img src="user/user_images/86man.jpg" alt="John" style="width:100%">
+  <img src="userimage/86man.jpg" alt="John" style="width:100%">
   <h1>Vidaloca</h1>
   <p class="title">Traveller</p>
   <p>Member on Awskom</p>
@@ -153,7 +153,7 @@ input:hover,
   </div>
   </div></div>
   <div class="col-sm-3"><div class="card">
-  <img src="user/user_images/photo4.jpg" alt="John" style="width:100%">
+  <img src="userimage/photo4.jpg" alt="John" style="width:100%">
   <h1>lool</h1>
   <p class="title">Germoniya tardiness</p>
   <p>Still waiting in the airport</p>
@@ -164,7 +164,6 @@ input:hover,
     <a href="#"><i class="fa fa-facebook"></i></a> 
   </div>
   </div></div>
-   
 <div class="col-sm-3"><button class="collapsible"><i class="fa fa-plus" style="font-size:20px;"> Summertime ...</i>
 </button>
 <div class="content">
