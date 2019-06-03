@@ -7,7 +7,7 @@
 	}else {
                 include __DIR__ . "/../head/header/headermsg.php";
                 include __DIR__ . "/../forum/header.php";
-                include("storedmsg/M-msg.php");
+                include("storallmessage/wait.php");
 ?>		                           		                                                        
 <?php 
 include ('footer.php');
