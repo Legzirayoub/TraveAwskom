@@ -32,7 +32,6 @@
 		<li><a href='user_profile.php?user_id=<?php echo $user_id ?>'><?php echo $user_name ?></a></li>
 		<li><?php echo $post_date ?></li>
 		</ol>
-		<h3><?php echo $post_title ?></h3>
 		<p><?php echo $content ?></p>
 		</div>
 		</div>
@@ -41,12 +40,11 @@
 		if ( isset( $_POST['reply'] ) ) {
 			$comment = $_POST['comment'];
 			$user_email = $_SESSION['user_email'];
-                        $IP = $_SERVER['REMOTE_ADDR'];
 			$current_user = "SELECT * from users where user_email='$user_email'";
 			$ferteh_current_user = mysqli_query( $connection, $current_user );
 			$current_user_row = mysqli_fetch_array( $ferteh_current_user );
 			$current_user_id = $current_user_row['user_id'];
-			$insert = "INSERT into comments (post_id, user_id,comment,date,IP) values('$post_id','$current_user_id','$comment',NOW(),'".$IP."')";
+			$insert = "INSERT into comments (post_id, user_id,comment,date) values('$post_id','$current_user_id','$comment',NOW())";
 			$ferteh = mysqli_query( $connection, $insert );
 			}  
 	        $get_id = $_GET['post_id'];
