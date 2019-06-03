@@ -84,7 +84,7 @@ input:hover,
    <div class="col-xs-12 col-sm-6 col-md-5"><div class="well">
         <div class="row clearfix">
         <div class="col-md-12 column">            
-   <?php include( "header/registration-form.php" ); ?>
+   <?php include( "head/header/registration_form.php" ); ?>
 </div>
 </div></div></div></div></div>
 <h4 class="text-center"><img src="img/boeing.png" alt="airplane" style="width:70%;"></h4>
