@@ -22,11 +22,11 @@
 					$ferteh_receiver   = mysqli_query( $connection, $ara_receiver );
 					$row               = mysqli_fetch_array( $ferteh_receiver );
 					$image             = $row['user_image'];
-          $receiver_name     = $row['user_name']; ?>       
-					<tr class='active'>
-					<td><a href='/../user_profile.php?user_id=<?php echo $message_receiver ?>'><img src='/../user/user_images/<?php echo $image ?>' class='img-circle' width='30' height='30' alt='image'><?php echo $receiver_name ?></a></td>
+                                        $receiver_name     = $row['user_name']; ?>       
+				<tr class='active'>
+				<td><a href='/../user_profile.php?user_id=<?php echo $message_receiver ?>'><img src='/../userimage/<?php echo $image ?>' class='img-circle' width='30' height='30' alt='image'><?php echo $receiver_name ?></a></td>
 				<td><?php echo $message_date ?></td>
-				<td><a href='M-messages.php?message_id=<?php echo $message_id ?>'>View Reply</a></td>
+				<td><a href='Mymessages.php?message_id=<?php echo $message_id ?>'>View Reply</a></td>
 				</tr>
 				<?php }?>
 </body>
