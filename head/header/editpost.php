@@ -1,17 +1,15 @@
 <div class="col-sm-9">
 			                <?php 
 				        if ( isset( $_GET['post_id'] ) ) {
-					$get_id = $_GET['post_id'];
-					$get_post = "SELECT *  from posts where post_id='$get_id'";
-					$ferteh_post = mysqli_query( $connection, $get_post );
-					$row = mysqli_fetch_array( $ferteh_post );
-					$post_title = $row['post_title'];
+					$get_id       = $_GET['post_id'];
+					$get_post     = "SELECT *  from posts where post_id='$get_id'";
+					$ferteh_post  = mysqli_query( $connection, $get_post );
+					$row          = mysqli_fetch_array( $ferteh_post );
 					$post_content = $row['post_content'];}?>
                         <form action="" method="post" class="form-horizontal">
 			<h2>Edit your post</h2>
 			<div class="form-group">
 			<div class="col-sm-12">
-			<input type="text" name="title" class="form-control" value="<?php echo $post_title; ?>">
 			</div>
 			</div>
 			<div class="form-group">
@@ -27,7 +25,7 @@
 			</select>
                         <select name="Visibility" class="custom-select" required>
 			<option value="">Select Visibility</option>
-			<?php getVisibility(); ?> 
+			<?php GetVisibility(); ?> 
 			</select>                     
 			</div>
 			</div>
@@ -39,11 +37,10 @@
 			</form>
 			<?php 
 				        if ( isset( $_POST['update'] ) ) {
-					$title = $_POST['title'];
 					$content = $_POST['content'];
 					$topic_id = $_POST['topic'];
                                         $Visibility_id = $_POST['Visibility'];
-					$update_post = "UPDATE posts set post_title='$title', post_content='$content', topic_id='$topic_id',Visibility_id='$Visibility_id' where post_id='$get_id'";
+					$update_post = "UPDATE posts set post_content='$content', topic_id='$topic_id',Visibility_id='$Visibility_id' where post_id='$get_id'";
 					$ferteh_update = mysqli_query( $connection, $update_post );
 					if ( $ferteh_update ) {
 					echo "<script>alert('Post has been updated succefully!')</script>";
