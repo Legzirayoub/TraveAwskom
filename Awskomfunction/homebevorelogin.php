@@ -57,38 +57,36 @@ border-radius: 10px;
 	</div>
 	<div id="posts">
         <?php if ( isset( $_GET['post_id'] ) ) {
-	$post_id = $_GET['post_id'];}
-	$get_posts  = "SELECT * from posts where Visibility_id='1' order by post_date desc  ";
-	$ferteh_posts  = mysqli_query( $connection, $get_posts );
-	while ( $row_posts = mysqli_fetch_array( $ferteh_posts ) ) {
-		$post_id = $row_posts['post_id'];
-		$user_id = $row_posts['user_id'];
-		$post_title = $row_posts['post_title'];
-		$content = $row_posts['post_content'];
-		$post_date = $row_posts['post_date'];
-		$user = "SELECT * from users where user_id='$user_id' AND posts='yes'";
+	$post_id             = $_GET['post_id'];}
+	$get_posts           = "SELECT * from posts where Visibility_id='1' order by post_date desc  ";
+	$ferteh_posts        = mysqli_query( $connection, $get_posts );
+	while ( $row_posts   = mysqli_fetch_array( $ferteh_posts ) ) {
+		$post_id     = $row_posts['post_id'];
+		$user_id     = $row_posts['user_id'];
+		$content     = $row_posts['post_content'];
+		$post_date   = $row_posts['post_date'];
+		$user        = "SELECT * from users where user_id='$user_id' AND posts='yes'";
 		$ferteh_user = mysqli_query( $connection, $user );
-		$row_user = mysqli_fetch_array( $ferteh_user );
-		$user_name = $row_user['user_name'];
-		$user_image = $row_user['user_image'];?>
+		$row_user    = mysqli_fetch_array( $ferteh_user );
+		$user_name   = $row_user['user_name'];
+		$user_image  = $row_user['user_image'];?>
                 <div class='panel panel-primary'>
 		<div class='panel-body'>
 		<div class='col-sm-13'>
 		<ol class='breadcrumb'>
                 <img src='userimage/<?php echo $user_image  ;?>' class='img-circle' alt="userimage" width='50' height='50'>
 		<li><a href='/'><?php echo $user_name ?></a></li>
-		<li><?php echo $postdate ?></li>
+		<li><?php echo $post_date ?></li>
 		</ol>
-		<h3><?php echo $posttitle ?></h3>
-		<p><?php echo $content ?></p>
+<hr>		<p><?php echo $content ?></p>    <hr>
 		<a href='/' class='btn btn-info'>Reply</a>
                 <a href='/' type='button' value='$like'  id='linkeBtn' class='btn btn-info'><img src='like.png' alt="userimage" width='20px' height='20px' ></a>
                 <a href='/' type='button' value='$unlike'  id='linkeBtn' class='btn btn-info'><img src='dislike.png' alt="userimage" width='20px' height='20px'></a>
                 <div class='btn-group'>
                 <?php  
-                $user_comments = "SELECT comment_id from comments where post_id='$post_id'";
-		$ferteh_comments  = mysqli_query( $connection, $user_comments );
-		$comments = mysqli_num_rows( $ferteh_comments );?>
+                $user_comments     = "SELECT comment_id from comments where post_id='$post_id'";
+		$ferteh_comments   = mysqli_query( $connection, $user_comments );
+		$comments          = mysqli_num_rows( $ferteh_comments );?>
                 <a href='/' class='navbar-brand'> View <?php echo $comments ?> comments</a>
                 <hr>
                 </div>
