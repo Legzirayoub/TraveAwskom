@@ -52,11 +52,11 @@ border-radius: 10px;
                             <input type="submit" name="submit" class="btn btn-primary pull-right" value="Post">
                                 <select name="topic" class="custom-select">
 				<option value="">Categorie</option>
-				<?php getTopics(); ?>
+				<?php Gettopics(); ?>
 				</select>
                                 <select name="Visibility" class="custom-select" required>
 				<option value="">Visibility</option>
-				<?php getVisibility(); ?> 
+				<?php GetVisibility(); ?> 
 				</select>
                                 </div>
 				</div>                                                                
@@ -64,27 +64,26 @@ border-radius: 10px;
 				<div class="col-sm-12">
 				</div>
 				</div>
-			        <?php insertPost(); ?>
+			        <?php Insertpost(); ?>
 				</div></div>
 				</div> 
 			        <div id="posts">
 	<?php if ( isset( $_GET['user_id'] ) ) {
-	$user_id = $_GET['user_id'];}
-	$topic_title = $_GET['topic'];
-        $get_posts  = "SELECT * from posts where Visibility_id='1' order by post_date desc ";
-	$ferteh_posts  = mysqli_query( $connection, $get_posts );
-	while ( $row_posts = mysqli_fetch_array( $ferteh_posts ) ) {
-		$post_id = $row_posts['post_id'];
-		$user_id = $row_posts['user_id'];
-		$post_title = $row_posts['post_title'];
-		$content = $row_posts['post_content'];
-		$post_date = $row_posts['post_date'];
+	$user_id             = $_GET['user_id'];}
+	$topic_title         = $_GET['topic'];
+        $get_posts           = "SELECT * from posts where Visibility_id='1' order by post_date desc ";
+	$ferteh_posts        = mysqli_query( $connection, $get_posts );
+	while ( $row_posts   = mysqli_fetch_array( $ferteh_posts ) ) {
+		$post_id     = $row_posts['post_id'];
+		$user_id     = $row_posts['user_id'];
+		$content     = $row_posts['post_content'];
+		$post_date   = $row_posts['post_date'];
                 $topic_title = $row_posts['topic_title'];
-		$user = "SELECT * from users where user_id='$user_id' AND posts='yes'";
+		$user        = "SELECT * from users where user_id='$user_id' AND posts='yes'";
 		$ferteh_user = mysqli_query( $connection, $user );
-		$row_user = mysqli_fetch_array( $ferteh_user );
-		$user_name = $row_user['user_name'];
-		$user_image = $row_user['user_image']; ?>
+		$row_user    = mysqli_fetch_array( $ferteh_user );
+		$user_name   = $row_user['user_name'];
+		$user_image  = $row_user['user_image']; ?>
                 <div class='panel panel-primary'>
 		<div class='panel-body'>
                 <div class='col-sm-1'>
@@ -109,9 +108,9 @@ border-radius: 10px;
 	        <a  onclick="javascript:doAction('<?php echo $id;?>','unlike');">Unlike (<span id="<?php echo $id; ?>_unlikes"><?php echo $data->unliked; ?></span>)</a>    
                 <div class='btn-group'>
                 <?php 
-                $user_comments = "SELECT comment_id from comments where post_id='$post_id'";
+                $user_comments    = "SELECT comment_id from comments where post_id='$post_id'";
 		$ferteh_comments  = mysqli_query( $connection, $user_comments );
-		$comments = mysqli_num_rows( $ferteh_comments ); ?>
+		$comments         = mysqli_num_rows( $ferteh_comments ); ?>
                 <a href='One.php?post_id=<?php echo $post_id ?>' class='navbar-brand'>View <?php echo $comments ?> comments </a>
                 <hr>
                 </div>
