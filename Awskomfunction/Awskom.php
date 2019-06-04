@@ -19,12 +19,11 @@ function Insertpost() {
 	global $connection;
 	global $user_id;
 	if ( isset( $_POST['sub'] ) ) {
-		$title = $_POST['title'] ;
 		$content = $_POST['content'] ;
 		$topic = $_POST['topic'];
 		$Visibility = $_POST['Visibility'];
                 $IP = $_SERVER['REMOTE_ADDR']; 
-			$insert = "INSERT into posts(user_id,topic_id,Visibility_id,post_title,post_content,post_date,IP) values('$user_id','$topic','$Visibility','$title','$content',NOW(),'".$IP."')";
+			$insert = "INSERT into posts(user_id,topic_id,Visibility_id,post_content,post_date,IP) values('$user_id','$topic','$Visibility','$content',NOW(),'".$IP."')";
 			$ferteh = mysqli_query( $connection, $insert );
 			if ( $ferteh ) {
 			$update = "UPDATE users set posts='1' where user_id='$user_id'";
