@@ -41,7 +41,7 @@
 		<li><span>Gender: </span><?php echo $gender ?></li>
 		<li><span>Member Since: </span><?php echo $register_date ?></li>
 		</ul>
-		<a href='messageuser/messages.php?user2_id=<?php echo $user_id ?>' class='btn btn-info'>message <?php echo $user_name ?></a>
+		<a href='message/messages.php?user2_id=<?php echo $user_id ?>' class='btn btn-info'>message <?php echo $user_name ?></a>
 		</div>
 		<div class='col-sm-4'>
 		<img src='userimage/<?php echo $user_image ?>' class='img-circle' alt='image' width='180' height='180' >
