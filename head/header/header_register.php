@@ -2,15 +2,15 @@
 <html lang="en-US">
 <body>
 <header id="header">
-	<nav class="navbar navbar-default" role="navigation">
-			<div class="container">
-						<div class="navbar-header">
-							<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
-								<span class="sr-only"></span>
-								<span class="icon-bar"></span>
-								<span class="icon-bar"></span>
-								<span class="icon-bar"></span>
-						       </button>
+<nav class="navbar navbar-default" role="navigation">
+<div class="container">
+<div class="navbar-header">
+<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+<span class="sr-only"></span>
+<span class="icon-bar"></span>
+<span class="icon-bar"></span>
+<span class="icon-bar"></span>
+</button>
 <a  href="index.php"><img src ="img/awskom01.png" width="60px" alt="userpic" height="57px"></a></div>             
 <div class="collapse navbar-collapse navbar-ex1-collapse">
 <div class="navbar-form navbar-left">                                                            
@@ -21,9 +21,9 @@
                     <a href="accountreset/forgotPassword.php"> Forgot Password ? </a>                                                
                     </div>
                     <div class="form-group">                                                            
-                     Or                                             
+                    Or                                             
                     </div>  
-                           <div class="form-group">                                                            
+                    <div class="form-group">                                                            
                     <a href="index.php"> Already have an account ? Login</a>                                                
                     </div>                                
                     </form></div>            
