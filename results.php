@@ -21,7 +21,6 @@
 	while ( $row_posts   = mysqli_fetch_array( $ferteh_posts ) ) {
 		$post_id     = $row_posts['post_id'];
 		$user_id     = $row_posts['user_id'];
-		$post_title  = $row_posts['post_title'];
 		$content     = $row_posts['post_content'];
 		$post_date   = $row_posts['post_date'];
 		$user        = "SELECT * from users where user_id='$user_id'";
@@ -39,8 +38,9 @@
 		<li><a href='user_profile.php?user_id=<?php echo $user_id ?>'><?php echo  $user_name ?></a></li>
 		<li><?php echo $post_date ?></li>
 		</ol>
-		<h3><?php echo $post_title ?></h3>
+		<hr>
 		<p><?php echo $content ?></p>
+		<hr>
 		<a href='One.php?post_id=<?php echo $post_id ?>' class='btn btn-info'>Reply</a>
 		</div>
 		</div>
