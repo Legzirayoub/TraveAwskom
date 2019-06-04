@@ -21,14 +21,14 @@ border-radius: 10px;
 <div class="col-md-12 column">
 <?php
 		if ( isset( $_GET['user_id'] ) ) {
-		$user_id = $_GET['user_id'];
-		$select = "SELECT * from users where user_id='$user_id'";
-		$ferteh = mysqli_query( $connection, $select );
-		$row = mysqli_fetch_array( $ferteh);
-		$id = $row['user_id'];
-		$image = $row['user_image'];
-		$name = $row['user_name'];
-		$gender = $row['user_gender'];
+		$user_id       = $_GET['user_id'];
+		$select        = "SELECT * from users where user_id='$user_id'";
+		$ferteh        = mysqli_query( $connection, $select );
+		$row           = mysqli_fetch_array( $ferteh);
+		$id            = $row['user_id'];
+		$image         = $row['user_image'];
+		$name          = $row['user_name'];
+		$gender        = $row['user_gender'];
 		$register_date = $row['register_date'];} ?>
                 <div class='col-sm-4'>
 		<img src='userimage/<?php echo $image ?>' class='img-circle' width='80' alt='users' height='80' >
@@ -87,11 +87,10 @@ background-color: #EEEEEE; }
 	while ( $row_posts   = mysqli_fetch_array( $ferteh_posts ) ) {
 		$post_id     = $row_posts['post_id'];
 		$user_id     = $row_posts['user_id'];
-		$post_title  = $row_posts['post_title'];
 		$content     = $row_posts['post_content'];
 		$post_date   = $row_posts['post_date'];
                 $topic_title = $row_posts['topic_title'];
-		$user        = "SELECT * from users where user_id='$user_id' AND posts='yes'";
+		$user        = "SELECT * from users where user_id='$user_id' AND posts='1'";
 		$ferteh_user = mysqli_query( $connection, $user );
 		$row_user    = mysqli_fetch_array( $ferteh_user );
 		$user_name   = $row_user['user_name'];
