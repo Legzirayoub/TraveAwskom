@@ -5,26 +5,26 @@
 	<?php 
         session_start(); 
         include __DIR__ . "/../../Awskomfunction/connection.php";
-		$user 		= $_SESSION['user_email'];
-		$ara_user   = "SELECT * from users where user_email='$user'";
-		$ferteh_user   = mysqli_query( $connection, $ara_user );
-		$row 	    = mysqli_fetch_array( $ferteh_user );
-                $post_id    = $row['post_id'];
-	        $user_id    = $row['user_id'];
-		$user_name  = $row['user_name'];
-	        $user_posts = "SELECT  * from posts where user_id='$user_id'";
-		$ferteh_posts  = mysqli_query( $connection, $user_posts );
-		$posts      = mysqli_num_rows( $ferteh_posts );
-                $ara_user   = "SELECT * from users where user_id='$user_id'";
-		$ferteh_user   = mysqli_query( $connection, $ara_user );
-		$row 	    = mysqli_fetch_array( $ferteh_user );
-                $post_id    = $row['post_id'];
-	        $user_id    = $row['user_id'];
-		$user_name  = $row['user_name'];
-		$comment_id  = $row['comment_id'];
-                $user_comment    = "SELECT * from comments where post_id='$post_id' AND comment_id='$comment_id'";
+		$user 		   = $_SESSION['user_email'];
+		$ara_user          = "SELECT * from users where user_email='$user'";
+		$ferteh_user       = mysqli_query( $connection, $ara_user );
+		$row 	           = mysqli_fetch_array( $ferteh_user );
+                $post_id           = $row['post_id'];
+	        $user_id           = $row['user_id'];
+		$user_name         = $row['user_name'];
+	        $user_posts        = "SELECT  * from posts where user_id='$user_id'";
+		$ferteh_posts      = mysqli_query( $connection, $user_posts );
+		$posts             = mysqli_num_rows( $ferteh_posts );
+                $ara_user          = "SELECT * from users where user_id='$user_id'";
+		$ferteh_user       = mysqli_query( $connection, $ara_user );
+		$row 	           = mysqli_fetch_array( $ferteh_user );
+                $post_id           = $row['post_id'];
+	        $user_id           = $row['user_id'];
+		$user_name         = $row['user_name'];
+		$comment_id        = $row['comment_id'];
+                $user_comment      = "SELECT * from comments where post_id='$post_id' AND comment_id='$comment_id'";
 		$ferteh_comment    = mysqli_query( $connection, $user_comment );
-		$comment  = mysqli_num_rows( $ferteh_comment );
+		$comment           = mysqli_num_rows( $ferteh_comment );
                 ?>
 					               <a href="#" class="navbar-brand" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><span class="caret"></span></a>
 					               <ul class="dropdown-menu">       
