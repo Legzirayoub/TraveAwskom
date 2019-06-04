@@ -34,7 +34,7 @@ border-radius: 10px;
 		<img src='userimage/<?php echo $image ?>' class='img-circle' width='80' alt='users' height='80' >
 </div>
 <div class='col-sm-4'>
-<a href='myinboxmessage/mymessage.php?user2_id=<?php echo $user_id ?>' class='btn btn-primary'>Message <?php echo $name ?></a>
+<a href='message/Mymessage.php?user2_id=<?php echo $user_id ?>' class='btn btn-primary'>Message <?php echo $name ?></a>
 <button cursor='pointer' class='btn btn-primary' onClick=\"addfriend(".$user2_id.");\">Add Friend</button>
 </div>
 </div></div></div>
