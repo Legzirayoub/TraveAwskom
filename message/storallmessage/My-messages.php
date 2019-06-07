@@ -6,7 +6,7 @@
                                 <a href="M-messages.php?Allmessage&user2_id=<?php echo $user_id; ?>" class="btn btn-danger">All message</a>
 			<?php
 			if ( isset( $_GET['sent'] ) ) {
-			include( "sentmessage.php" );} 
+			include( "Message_sent.php" );} 
 			?>
                         <?php
 			if ( isset( $_GET['Receivedreply'] ) ) {
@@ -50,9 +50,9 @@ $sel_message = "SELECT * from messages where receiver='$user_id' AND message_typ
 									}else { ?>
 									<tr class='active'>
                                                                         <?php } ?>
-									<td><a href='/../user_profile.php?user_id=<?php echo $message_sender ?>'><img src='/../user/user_images/<?php echo $image ?>' class='img-circle' width='30' height='30' alt='userimage' ><?php echo $sender_name ?></a></td>
+									<td><a href='/../user_profile.php?user_id=<?php echo $message_sender ?>'><img src='/../userimage/<?php echo $image ?>' class='img-circle' width='30' height='30' alt='userimage' ><?php echo $sender_name ?></a></td>
 									<td><?php echo $message_date ?></td>
-									<td><a href='M-messages.php?message_id=<?php echo $message_id ?>'>Reply</a></td>
+									<td><a href='Mymessages.php?message_id=<?php echo $message_id ?>'>Reply</a></td>
 									</tr>
 <?php }?>
                                         </body>
@@ -73,9 +73,9 @@ $sel_message = "SELECT * from messages where receiver='$user_id' AND message_typ
 						$reply_receiver = $dad_message_receiver;
 						}
 						$user_reply = $_POST['message_reply'];
-						$reply_status = "read";
+						$reply_status = "vue";
 						$reply_msg_type = "reply";
-						$insert_reply_message = "INSERT into messages(dad_message_id,sender,receiver,reply,status,message_type,message_date) values('$get_id','$reply_sender','$reply_receiver','$user_reply','read','reply',NOW())";
+						$insert_reply_message = "INSERT into messages(dad_message_id,sender,receiver,reply,status,message_type,message_date) values('$get_id','$reply_sender','$reply_receiver','$user_reply','vue','reply',NOW())";
 						$ferteh_update = mysqli_query( $connection, $insert_reply_message);
 					        }
 				if ( isset( $_GET['message_id'] ) ) {
@@ -83,7 +83,6 @@ $sel_message = "SELECT * from messages where receiver='$user_id' AND message_typ
 						$select_message = "SELECT * from messages where message_id='$get_id'";
 						$ferteh_message = mysqli_query( $connection, $select_message );
 						$row_message = mysqli_fetch_array( $ferteh_message );
-						$message_subject = $row_message['message_subito'];
 						$message_topic = $row_message['message_topic'];
 						$message_receiver = $row_message['receiver'];
 						$message_sender = $row_message['sender'];
@@ -97,15 +96,15 @@ $sel_message = "SELECT * from messages where receiver='$user_id' AND message_typ
 						$row_sender	= mysqli_fetch_array( $ferteh_sender );
 						$sender_name = $row_sender['user_name'];
 						$sender_image = $row_sender['user_image'];
-						$update_unread = "UPDATE messages set status='read' where message_id='$get_id'";
-						$ferteh_unread = mysqli_query( $connection, $update_unread );
+						$update_nonvue = "UPDATE messages set status='vue' where message_id='$get_id'";
+						$ferteh_nonvue = mysqli_query( $connection, $update_nonvue );
                                                ?>
                                                 <tr>
 						<div class='well clearfix'>
 						<div class='message parent'>
                                                 <div class='panel panel-primary'>
 		                                <div class='panel-body'>
-						<td><h4><img src='/../user/user_images/<?php echo $sender_image ?>' class='img-circle' width='80' height='80' alt='userimage'><strong><?php echo $sender_name ?></strong></h4></td>
+						<td><h4><img src='/../userimage/<?php echo $sender_image ?>' class='img-circle' width='80' height='80' alt='userimage'><strong><?php echo $sender_name ?></strong></h4></td>
 						<td><p><strong>Subject:</strong><?php echo $message_subject ?></p></td>
 						<td><p><strong>Message:</strong><?php echo $message_topic ?></p><br></td>
                                                 </div></div>
@@ -122,7 +121,7 @@ $sel_message = "SELECT * from messages where receiver='$user_id' AND message_typ
                                                         <div class='panel panel-primary'>
 		                                        <div class='panel-body'>
 								<div class='message reply '>
-								<img src='/../user/user_images/<?php echo $sender_image ?>' class='img-circle' width='80' height='80' alt='userimage'><strong><?php echo $sender_name ?></strong>
+								<img src='/../userimage/<?php echo $sender_image ?>' class='img-circle' width='80' height='80' alt='userimage'><strong><?php echo $sender_name ?></strong>
                                                                 <div class='panel panel-primary'>
                                                                 <div class='panel-body'>
                                                                 <p class='text-left'><?php echo $reply_content ?></p>
@@ -133,14 +132,14 @@ $sel_message = "SELECT * from messages where receiver='$user_id' AND message_typ
                                                                 <div class='panel panel-primary'>
 		                                                <div class='panel-body'>
                                                                 <div class='message reply  '>
-								<img src='/../user/user_images/<?php echo $receiver_image ?>' class='img-circle' width='80' height='80' alt='userimage'><strong><?php echo $receiver_name ?></strong>
+								<img src='/../userimage/<?php echo $receiver_image ?>' class='img-circle' width='80' height='80' alt='userimage'><strong><?php echo $receiver_name ?></strong>
 								<div class='panel panel-primary'>
                                                                 <div class='panel-body'>
                                                                 <p class='text-left'><?php echo $reply_content ?></p>
 								</div></div></div></div></div>
 							        <?php }} ?>
 						<div class='reply-to-message  '>
-						<form action='M-messages.php?message_id=<?php echo $get_id ?>' method='POST' class='form-horizontal'>
+						<form action='Mymessages.php?message_id=<?php echo $get_id ?>' method='POST' class='form-horizontal'>
 						<textarea name='message_reply' class='form-control' rows='10' placeholder='Reply to this message...' required></textarea><br>
 						<input type='submit' name='submit_message' class='btn btn-info' value='Answer to Message'>
 						</form>	 
