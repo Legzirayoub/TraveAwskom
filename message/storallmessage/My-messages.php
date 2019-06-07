@@ -24,29 +24,29 @@
 				<tr>
 				<th>Sendername</th>
 				<th>Time</th>
-				<th>Reply</th>
+				<th>Reply</th> 
 				</tr>
 				</head>
 				<body>
 <?php 
 $sel_message = "SELECT * from messages where receiver='$user_id' AND message_type='dad' order by 1 DESC";
-								$run_message = mysqli_query( $connection, $sel_message );
-								$count_message = mysqli_num_rows( $run_message );
+								$run_message              = mysqli_query( $connection, $sel_message );
+								$count_message            = mysqli_num_rows( $run_message );
 								while ( $row_message = mysqli_fetch_array( $run_message ) ) {
-									$message_id = $row_message['message_id'];
+									$message_id       = $row_message['message_id'];
 									$message_receiver = $row_message['receiver'];
-									$message_sender = $row_message['sender'];
-									$message_subito = $row_message['message_subito'];
-									$message_topic = $row_message['message_topic'];
-									$message_date = $row_message['message_date'];
-									$message_status = $row_message['status'];
-									$get_sender = "SELECT * from users where user_id='$message_sender'";
-									$run_sender = mysqli_query( $connection, $get_sender );
-									$row = mysqli_fetch_array( $run_sender );
-									$sender_name = $row['user_name'];
-									$image = $row['user_image'];
+									$message_sender   = $row_message['sender'];
+									$message_subito   = $row_message['message_subito'];
+									$message_topic    = $row_message['message_topic'];
+									$message_date     = $row_message['message_date'];
+									$message_status   = $row_message['status'];
+									$get_sender       = "SELECT * from users where user_id='$message_sender'";
+									$run_sender       = mysqli_query( $connection, $get_sender );
+									$row              = mysqli_fetch_array( $run_sender );
+									$sender_name      = $row['user_name'];
+									$image            = $row['user_image'];
                                                                         if ( $message_status == 'unread' ) {
-									$awskom  = "<tr class='success'>";
+									$awskom           = "<tr class='success'>";
 									}else { ?>
 									<tr class='active'>
                                                                         <?php } ?>
@@ -60,44 +60,44 @@ $sel_message = "SELECT * from messages where receiver='$user_id' AND message_typ
 				<?php } ?>
 				<?php
 				if ( isset( $_POST['submit_message'] ) ) {
-						$get_id = $_GET['message_id'];
-						$khtar_dad_message = "SELECT * from messages where message_id='$get_id'";
-						$ferteh_dad_message = mysqli_query( $connection, $khtar_dad_message );
-						$row_dad_message = mysqli_fetch_array( $ferteh_dad_message );
+						$get_id               = $_GET['message_id'];
+						$khtar_dad_message    = "SELECT * from messages where message_id='$get_id'";
+						$ferteh_dad_message   = mysqli_query( $connection, $khtar_dad_message );
+						$row_dad_message      = mysqli_fetch_array( $ferteh_dad_message );
 						$dad_message_receiver = $row_dad_message['receiver'];
-						$dad_message_sender = $row_dad_message['sender'];
-						$reply_sender = $user_id;
+						$dad_message_sender   = $row_dad_message['sender'];
+						$reply_sender         = $user_id;
 						if ( $dad_message_receiver == $user_id ) {
-						$reply_receiver = $dad_message_sender;
+						$reply_receiver       = $dad_message_sender;
 						}else {
-						$reply_receiver = $dad_message_receiver;
+						$reply_receiver       = $dad_message_receiver;
 						}
-						$user_reply = $_POST['message_reply'];
-						$reply_status = "vue";
-						$reply_msg_type = "reply";
+						$user_reply           = $_POST['message_reply'];
+						$reply_status         = "vue";
+						$reply_msg_type       = "reply";
 						$insert_reply_message = "INSERT into messages(dad_message_id,sender,receiver,reply,status,message_type,message_date) values('$get_id','$reply_sender','$reply_receiver','$user_reply','vue','reply',NOW())";
-						$ferteh_update = mysqli_query( $connection, $insert_reply_message);
+						$ferteh_update        = mysqli_query( $connection, $insert_reply_message);
 					        }
 				if ( isset( $_GET['message_id'] ) ) {
 						$get_id = $_GET['message_id'];
-						$select_message = "SELECT * from messages where message_id='$get_id'";
-						$ferteh_message = mysqli_query( $connection, $select_message );
-						$row_message = mysqli_fetch_array( $ferteh_message );
-						$message_topic = $row_message['message_topic'];
-						$message_receiver = $row_message['receiver'];
-						$message_sender = $row_message['sender'];
-						$get_receiver   = "SELECT * from users where user_id='$message_receiver'";
-						$ferteh_receiver   = mysqli_query( $connection, $get_receiver );
-						$row_receiver	= mysqli_fetch_array( $ferteh_receiver );
-						$receiver_name = $row_receiver['user_name'];
-						$receiver_image = $row_receiver['user_image'];
-						$get_sender   = "SELECT * from users where user_id='$message_sender'";
-						$ferteh_sender  = mysqli_query( $connection, $get_sender );
-						$row_sender	= mysqli_fetch_array( $ferteh_sender );
-						$sender_name = $row_sender['user_name'];
-						$sender_image = $row_sender['user_image'];
-						$update_nonvue = "UPDATE messages set status='vue' where message_id='$get_id'";
-						$ferteh_nonvue = mysqli_query( $connection, $update_nonvue );
+						$select_message      = "SELECT * from messages where message_id='$get_id'";
+						$ferteh_message      = mysqli_query( $connection, $select_message );
+						$row_message         = mysqli_fetch_array( $ferteh_message );
+						$message_topic       = $row_message['message_topic'];
+						$message_receiver    = $row_message['receiver'];
+						$message_sender      = $row_message['sender'];
+						$get_receiver        = "SELECT * from users where user_id='$message_receiver'";
+						$ferteh_receiver     = mysqli_query( $connection, $get_receiver );
+						$row_receiver	     = mysqli_fetch_array( $ferteh_receiver );
+						$receiver_name       = $row_receiver['user_name'];
+						$receiver_image      = $row_receiver['user_image'];
+						$get_sender          = "SELECT * from users where user_id='$message_sender'";
+						$ferteh_sender       = mysqli_query( $connection, $get_sender );
+						$row_sender	     = mysqli_fetch_array( $ferteh_sender );
+						$sender_name         = $row_sender['user_name'];
+						$sender_image        = $row_sender['user_image'];
+						$update_nonvue       = "UPDATE messages set status='vue' where message_id='$get_id'";
+						$ferteh_nonvue       = mysqli_query( $connection, $update_nonvue );
                                                ?>
                                                 <tr>
 						<div class='well clearfix'>
@@ -110,12 +110,12 @@ $sel_message = "SELECT * from messages where receiver='$user_id' AND message_typ
                                                 </div></div>
                                                 </div>
                                                <?php
-						$get_message_reply = "SELECT * from messages where dad_message_id='$get_id' AND message_type='reply'  order by message_date ASC";
-						$message_reply_query = mysqli_query( $connection, $get_message_reply );
+						$get_message_reply         = "SELECT * from messages where dad_message_id='$get_id' AND message_type='reply'  order by message_date ASC";
+						$message_reply_query       = mysqli_query( $connection, $get_message_reply );
 						while ( $row_message_reply = mysqli_fetch_array( $message_reply_query ) ) {
-							$reply_sender = $row_message_reply['sender'];
-							$reply_receiver = $row_message_reply['receiver'];
-							$reply_content = $row_message_reply['reply'];
+							$reply_sender      = $row_message_reply['sender'];
+							$reply_receiver    = $row_message_reply['receiver'];
+							$reply_content     = $row_message_reply['reply'];
 							if ( $reply_sender == $message_sender ) {
                                                         ?>
                                                         <div class='panel panel-primary'>
