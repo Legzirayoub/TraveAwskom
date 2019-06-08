@@ -30,22 +30,21 @@
 				<body>
 <?php 
 $sel_message = "SELECT * from messages where receiver='$user_id' AND message_type='dad' order by 1 DESC";
-								$run_message              = mysqli_query( $connection, $sel_message );
-								$count_message            = mysqli_num_rows( $run_message );
-								while ( $row_message = mysqli_fetch_array( $run_message ) ) {
+								$ferteh_message              = mysqli_query( $connection, $sel_message );
+								$count_message            = mysqli_num_rows( $ferteh_message );
+								while ( $row_message = mysqli_fetch_array( $ferteh_message ) ) {
 									$message_id       = $row_message['message_id'];
 									$message_receiver = $row_message['receiver'];
 									$message_sender   = $row_message['sender'];
-									$message_subito   = $row_message['message_subito'];
 									$message_topic    = $row_message['message_topic'];
 									$message_date     = $row_message['message_date'];
 									$message_status   = $row_message['status'];
 									$get_sender       = "SELECT * from users where user_id='$message_sender'";
-									$run_sender       = mysqli_query( $connection, $get_sender );
-									$row              = mysqli_fetch_array( $run_sender );
+									$ferteh_sender       = mysqli_query( $connection, $get_sender );
+									$row              = mysqli_fetch_array( $ferteh_sender );
 									$sender_name      = $row['user_name'];
 									$image            = $row['user_image'];
-                                                                        if ( $message_status == 'unread' ) {
+                                                                        if ( $message_status == 'nonvue' ) {
 									$awskom           = "<tr class='success'>";
 									}else { ?>
 									<tr class='active'>
@@ -105,7 +104,6 @@ $sel_message = "SELECT * from messages where receiver='$user_id' AND message_typ
                                                 <div class='panel panel-primary'>
 		                                <div class='panel-body'>
 						<td><h4><img src='/../userimage/<?php echo $sender_image ?>' class='img-circle' width='80' height='80' alt='userimage'><strong><?php echo $sender_name ?></strong></h4></td>
-						<td><p><strong>Subject:</strong><?php echo $message_subject ?></p></td>
 						<td><p><strong>Message:</strong><?php echo $message_topic ?></p><br></td>
                                                 </div></div>
                                                 </div>
